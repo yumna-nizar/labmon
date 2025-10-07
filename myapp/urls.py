@@ -69,7 +69,8 @@ urlpatterns = [
     path('admin_editlab_post/',views.admin_editlab_post),
 
 
-    path('admin_editlabassist_get/',views.admin_editlabassist_get),
+    path('admin_editlabassist_get/<id>',views.admin_editlabassist_get),
+    path('admin_deletelabassist_get/<id>',views.admin_deletelabassist_get),
     path('admin_editlabassist_post/',views.admin_editlabassist_post),
 
 
@@ -81,11 +82,13 @@ urlpatterns = [
     path('admin_editlab_schedule_get/',views.admin_editlab_schedule_get),
     path('admin_editlab_schedule_post/',views.admin_editlab_schedule_post),
 
-    path('admin_editstaff_get/',views.admin_editstaff_get),
+    path('admin_editstaff_get/<id>',views.admin_editstaff_get),
+    path('admin_deletestaff_get/<id>',views.admin_deletestaff_get),
     path('admin_editstaff_post/',views.admin_editstaff_post),
 
 
-    path('admin_editstudent_get/',views.admin_editstudent_get),
+    path('admin_editstudent_get/<id>',views.admin_editstudent_get),
+    path('admin_deletestudent_get/<id>',views.admin_deletestudent_get),
     path('admin_editstudent_post/',views.admin_editstudent_post),
 
 

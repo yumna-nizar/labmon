@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -17,11 +18,14 @@ class Staff(models.Model):
     place=models.CharField(max_length=50)
     city=models.CharField(max_length=50)
     state=models.CharField(max_length=50)
+    dob = models.DateField()
     pincode=models.CharField(max_length=50)
+    USER=models.OneToOneField(User,on_delete=models.CASCADE)
 
 class Student(models.Model):
     studentname = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
+    dob = models.DateField()
     phone = models.CharField(max_length=50)
     gender = models.CharField(max_length=50)
     place = models.CharField(max_length=50)
@@ -89,8 +93,11 @@ class Labassistant(models.Model):
     phone =models.CharField(max_length=50)
     gender = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
+    dob = models.DateField()
     state = models.CharField(max_length=50)
     pincode = models.CharField(max_length=50)
+    USER=models.OneToOneField(User,on_delete=models.CASCADE)
+
 
 
 
