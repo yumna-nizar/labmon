@@ -52,7 +52,8 @@ urlpatterns = [
     path('admin_assistallocation_post/',views.admin_assistallocation_post),
 
 
-    path('admin_editassistallocation_get/',views.admin_editassistallocation_get),
+    path('admin_editassistallocation_get/<id>',views.admin_editassistallocation_get),
+    path('admin_deleteassistallocation_post/<id>',views.admin_deleteassistallocation_post),
     path('admin_editassistallocation_post/',views.admin_editassistallocation_post),
 
     path('admin_editcourse_get/<id>',views.admin_editcourse_get),
@@ -96,10 +97,6 @@ urlpatterns = [
     path('admin_editsystem_post/',views.admin_editsystem_post),
 
 
-    path('admin_viewassist_allocation_get/',views.admin_viewassist_allocation_get),
-    path('admin_viewassist_allocation_post/',views.admin_viewassist_allocation_post),
-
-
     path('admin_viewcourse_get/',views.admin_viewcourse_get),
     path('admin_viewcourse_post/',views.admin_viewcourse_post),
 
@@ -132,6 +129,10 @@ urlpatterns = [
     path('admin_viewstudent_get/',views.admin_viewstudent_get),
     path('admin_viewstudent_post/',views.admin_viewstudent_post),
 
+    path('admin_viewassist_allocation_get/',views.admin_viewassist_allocation_get),
+    # path('admin_viewassist_allocation_post/',views.admin_viewassist_allocation_post),
+
+
 
     path('admin_viewsystem_get/',views.admin_viewsystem_get),
     path('admin_viewsystem_post/',views.admin_viewsystem_post),
@@ -143,7 +144,10 @@ urlpatterns = [
 
     path('admin_viewattendance_report_get/',views.admin_viewattendance_report_get),
 
-    path('admin_viewstaff_suballoc_get/',views.admin_viewstaff_suballoc_get),
+    path('admin_staffsuballoc_get/',views.admin_staffsuballoc_get),
+    path('admin_staffsuballoc_post/',views.admin_staffsuballoc_post),
+
+    path('admin_viewsuballoc/',views.admin_viewsuballoc),
 
 
 
