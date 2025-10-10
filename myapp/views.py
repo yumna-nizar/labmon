@@ -25,6 +25,10 @@ def login_post(request):
         if user.groups.filter(name='admin').exists():
             messages.success(request,'login successfully')
             return redirect('/myapp/admin_home/')
+        elif user.groups.filter(name='Lab assistant').exists():
+            messages.success(request, 'login successfully')
+            return redirect('/myapp/labassist_index_get/')
+
         else:
             messages.success(request, 'invalid user')
             return redirect('/myapp/login_get/')
@@ -62,6 +66,8 @@ def admin_changepassword_post(request):
         messages.warning(request,"invalid password")
         return redirect("/myapp/admin_changepassword_get/")
 
+
+#add course
 def admin_addcourse_get(request):
     data=Departement.objects.all()
     return render(request, "adminpage/add_course.html",{'data':data})
@@ -80,8 +86,33 @@ def admin_add_course_post(request):
     return redirect('/myapp/admin_viewcourse_get/')
 
 
+def admin_editcourse_get(request,id):
+    data=Departement.objects.all()
+    data1=Course.objects.get(id=id)
+    return render(request, "adminpage/edit_course.html",{'data':data,'data1':data1})
 
 
+def admin_editcourse_post(request):
+    course = request.POST['course']
+    totsem = request.POST['totsem']
+    did = request.POST['dept']
+    id=request.POST['id']
+
+    a = Course.objects.get(id=id)
+    a.coursename = course
+    a.totelsem = totsem
+    a.DEP = Departement.objects.get(id=did)
+    a.save()
+    return redirect('/myapp/admin_viewcourse_get/')
+
+
+def admin_delete_course(request,id):
+    Course.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewcourse_get/')
+
+
+
+#add department
 
 def admin_add_department_get(request):
     return render(request, "adminpage/add_department.html")
@@ -96,7 +127,28 @@ def admin_add_department_post(request):
     a.save()
     return redirect('/myapp/admin_viewdepartment_get/')
 
+def admin_editdepartment_get(request,id):
+    data=Departement.objects.get(id=id)
+    return render(request, "adminpage/edit_department.html",{'data':data})
 
+
+def admin_editdepartment_post(request):
+    dept = request.POST['dept']
+    id=request.POST['id']
+
+    a = Departement.objects.get(id=id)
+    a.departementname = dept
+    a.save()
+    return redirect('/myapp/admin_viewdepartment_get/')
+
+
+def admin_delete_department(request,id):
+    Departement.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewdepartment_get/')
+
+
+
+#add lab
 def admin_addlab_get(request):
     return render(request, "adminpage/add_lab.html")
 
@@ -111,7 +163,28 @@ def admin_addlab_post(request):
     a.save()
     return redirect('/myapp/admin_viewlab_get/')
 
+def admin_editlab_get(request,id):
+    data=Lab.objects.get(id=id)
+    return render(request, "adminpage/edit_lab.html",{'data':data})
 
+def admin_editlab_post(request):
+    id=request.POST['id']
+    lab=request.POST['labname']
+    labno=request.POST['labno']
+
+    a=Lab.objects.get(id=id)
+    a.labname=lab
+    a.labno=labno
+    a.save()
+    return redirect('/myapp/admin_viewlab_get/')
+
+
+def admin_deletelab(request,id):
+    Lab.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewlab_get/')
+
+
+#add lab assistant
 def admin_addlabassist_get(request):
     return render(request, "adminpage/add_labassist.html")
 
@@ -152,6 +225,45 @@ def admin_addlabassist_post(request):
         return redirect('/myapp/admin_viewlabassist_get/')
 
 
+def admin_editlabassist_get(request,id):
+    data=Labassistant.objects.get(id=id)
+
+    return render(request, "adminpage/edit_labassist.html",{'data':data})
+
+
+
+def admin_editlabassist_post(request):
+    labassistantname=request.POST['name']
+    email = request.POST['email']
+    phone = request.POST['phone']
+    gender = request.POST['gender']
+    place = request.POST['place']
+    dob = request.POST['dob']
+    city = request.POST['city']
+    state = request.POST['state']
+    pincode = request.POST['pincode']
+    id=request.POST['id']
+
+    a=Labassistant.objects.get(id=id)
+    a.labassistantname=labassistantname
+    a.email = email
+    a.phone = phone
+    a.gender = gender
+    a.dob=dob
+    a.place = place
+    a.city = city
+    a.state = state
+    a.pincode = pincode
+    a.save()
+    return redirect('/myapp/admin_viewlabassist_get/')
+
+def admin_deletelabassist_get(request, id):
+    Labassistant.objects.get(USER_id=id).delete()
+    User.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewlabassist_get/')
+
+
+#add lab sub
 def admin_addlabsub_get(request):
     return render(request, "adminpage/add_labsub.html")
 
@@ -164,15 +276,103 @@ def admin_addlabsub_post(request):
     a.save()
     return redirect("/myapp/admin_viewlabsub_get/")
 
+def admin_editlabsub_get(request,id):
+    data=Labsubject.objects.get(id=id)
+    return render(request, "adminpage/edit_labsub.html",{'data':data})
 
+
+def admin_editlabsub_post(request):
+    sub = request.POST['sub']
+    id=request.POST['id']
+
+    a = Labsubject.objects.get(id=id)
+    a.subject = sub
+    a.save()
+    return redirect("/myapp/admin_viewlabsub_get/")
+
+
+def admin_delete_labsub(request,id):
+    Labsubject.objects.get(id=id).delete()
+    return redirect("/myapp/admin_viewlabsub_get/")
+
+
+
+#add labsub schedule
 def admin_addlabsub_schedule_get(request):
-    return render(request, "adminpage/add_labsub_schedule.html")
+    lab=Laballocation.objects.all()
+    course=Course.objects.all()
+    sub=Labsubject.objects.all()
+
+    return render(request, "adminpage/add_labsub_schedule.html",{'lab':lab,'course':course,'labsub':sub})
 
 
 def admin_addlabsub_schedule_post(request):
+    lab=request.POST['lab']
+    course=request.POST['course']
+    sub=request.POST['sub']
+    day=request.POST['day']
+    from_=request.POST['from']
+    to=request.POST['to']
+    sem=request.POST['sem']
+
+    a=Labsubjectschedule()
+    a.day=day
+    a.fromtime=from_
+    a.totime=to
+    a.LABSUB_id=sub
+    a.LABALLOCATION_id=lab
+    a.save()
+
+    return redirect('/myapp/admin_viewlabsub_schedule_get/')
+
+
+def admin_editlab_schedule_get(request,id):
+    lab=Laballocation.objects.all()
+    course=Course.objects.all()
+    sub=Labsubject.objects.all()
+    data=Labsubjectschedule.objects.get(id=id)
+
+    return render(request, "adminpage/edit_labsub_schedule.html",{'lab':lab,'course':course,'labsub':sub,'data':data})
+
+
+
+
+def admin_editlab_schedule_post(request):
+    lab = request.POST['lab']
+    course = request.POST['course']
+    sub = request.POST['sub']
+    day = request.POST['day']
+    from_ = request.POST['from']
+    to = request.POST['to']
+    sem = request.POST['sem']
+    id=request.POST['id']
+
+    a = Labsubjectschedule.objects.get(id=id)
+    a.day = day
+    a.fromtime = from_
+    a.totime = to
+    a.LABSUB_id = sub
+    a.LABALLOCATION_id = lab
+    a.save()
+
+    return redirect('/myapp/admin_viewlabsub_schedule_get/')
+
+
+
+def admin_viewlabsub_schedule_get(request):
+    data=Labsubjectschedule.objects.all()
+    return render(request, "adminpage/view_labsub_schedule.html",{'data':data})
+
+
+def admin_deletelabsub_schedule_get(request,id):
+    Labsubjectschedule.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewlabsub_schedule_get/')
+
+
+def admin_viewlabsub_schedule_post(request):
     return
 
-
+#add staff
 def admin_addstaff_get(request):
     return render(request, "adminpage/add_staff.html")
 
@@ -213,6 +413,51 @@ def admin_addstaff_post(request):
 
         return redirect('/myapp/admin_viewstaff_get')
 
+
+def admin_editstaff_get(request,id):
+    data=Staff.objects.get(id=id)
+
+    return render(request, "adminpage/edit_staff.html",{'data':data})
+
+
+
+
+def admin_editstaff_post(request):
+    staffname = request.POST['name']
+    email = request.POST['email']
+    phone = request.POST['phone']
+    gender = request.POST['gender']
+    place = request.POST['place']
+    city = request.POST['city']
+    dob = request.POST['dob']
+    state = request.POST['state']
+    pincode = request.POST['pincode']
+    id=request.POST['id']
+
+
+
+    a = Staff.objects.get(id=id)
+    a.staffname = staffname
+    a.email = email
+    a.phone = phone
+    a.gender = gender
+    a.place = place
+    a.city = city
+    a.state = state
+    a.pincode = pincode
+    a.dob = dob
+    a.save()
+
+    return redirect('/myapp/admin_viewstaff_get')
+
+def admin_deletestaff_get(request, id):
+    Staff.objects.get(USER_id=id).delete()
+    User.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewstaff_get')
+
+
+
+#add student
 
 def admin_addstudent_get(request):
     data=Course.objects.all()
@@ -261,205 +506,6 @@ def admin_addstudent_post(request):
         a.COURSE=Course.objects.get(id=cid)
         a.save()
     return redirect('/myapp/admin_viewstudent_get/')
-
-
-def admin_addsystem_get(request):
-    return render(request, "adminpage/add_system.html")
-
-
-def admin_addsystem_post(request):
-    return
-
-
-def admin_assistallocation_get(request):
-    return render(request, 'adminpage/assist_allocation.html')
-
-
-def admin_assistallocation_post(request):
-    return
-
-
-def admin_editassistallocation_get(request):
-    return render(request, "adminpage/edit_assist_allocation.html")
-
-
-def admin_editassistallocation_post(request):
-    return
-
-
-def admin_editcourse_get(request,id):
-    data=Departement.objects.all()
-    data1=Course.objects.get(id=id)
-    return render(request, "adminpage/edit_course.html",{'data':data,'data1':data1})
-
-
-def admin_editcourse_post(request):
-    course = request.POST['course']
-    totsem = request.POST['totsem']
-    did = request.POST['dept']
-    id=request.POST['id']
-
-    a = Course.objects.get(id=id)
-    a.coursename = course
-    a.totelsem = totsem
-    a.DEP = Departement.objects.get(id=did)
-    a.save()
-    return redirect('/myapp/admin_viewcourse_get/')
-
-
-def admin_delete_course(request,id):
-    Course.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewcourse_get/')
-
-
-
-def admin_editdepartment_get(request,id):
-    data=Departement.objects.get(id=id)
-    return render(request, "adminpage/edit_department.html",{'data':data})
-
-
-def admin_editdepartment_post(request):
-    dept = request.POST['dept']
-    id=request.POST['id']
-
-    a = Departement.objects.get(id=id)
-    a.departementname = dept
-    a.save()
-    return redirect('/myapp/admin_viewdepartment_get/')
-
-
-def admin_delete_department(request,id):
-    Departement.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewdepartment_get/')
-
-def admin_editlab_get(request,id):
-    data=Lab.objects.get(id=id)
-    return render(request, "adminpage/edit_lab.html",{'data':data})
-
-def admin_editlab_post(request):
-    id=request.POST['id']
-    lab=request.POST['labname']
-    labno=request.POST['labno']
-
-    a=Lab.objects.get(id=id)
-    a.labname=lab
-    a.labno=labno
-    a.save()
-    return redirect('/myapp/admin_viewlab_get/')
-
-
-def admin_deletelab(request,id):
-    Lab.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewlab_get/')
-
-def admin_editlabassist_get(request,id):
-    data=Labassistant.objects.get(id=id)
-
-    return render(request, "adminpage/edit_labassist.html",{'data':data})
-
-def admin_deletelabassist_get(request, id):
-    Labassistant.objects.get(USER_id=id).delete()
-    User.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewlabassist_get/')
-
-def admin_editlabassist_post(request):
-    labassistantname=request.POST['name']
-    email = request.POST['email']
-    phone = request.POST['phone']
-    gender = request.POST['gender']
-    place = request.POST['place']
-    dob = request.POST['dob']
-    city = request.POST['city']
-    state = request.POST['state']
-    pincode = request.POST['pincode']
-    id=request.POST['id']
-
-
-
-    a=Labassistant.objects.get(id=id)
-    a.labassistantname=labassistantname
-    a.email = email
-    a.phone = phone
-    a.gender = gender
-    a.dob=dob
-    a.place = place
-    a.city = city
-    a.state = state
-    a.pincode = pincode
-    a.USER=user
-    a.save()
-    return redirect('/myapp/admin_viewlabassist_get/')
-
-
-
-def admin_editlabsub_get(request,id):
-    data=Labsubject.objects.get(id=id)
-    return render(request, "adminpage/edit_labsub.html",{'data':data})
-
-
-def admin_editlabsub_post(request):
-    sub = request.POST['sub']
-    id=request.POST['id']
-
-    a = Labsubject.objects.get(id=id)
-    a.subject = sub
-    a.save()
-    return redirect("/myapp/admin_viewlabsub_get/")
-
-
-def admin_delete_labsub(request,id):
-    Labsubject.objects.get(id=id).delete()
-    return redirect("/myapp/admin_viewlabsub_get/")
-
-
-def admin_editlab_schedule_get(request):
-    return render(request, "adminpage/edit_labsub_schedule.html")
-
-
-def admin_editlab_schedule_post(request):
-
-    return
-
-
-def admin_editstaff_get(request,id):
-    data=Staff.objects.get(id=id)
-
-    return render(request, "adminpage/edit_staff.html",{'data':data})
-
-
-def admin_deletestaff_get(request, id):
-    Staff.objects.get(USER_id=id).delete()
-    User.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewstaff_get')
-
-def admin_editstaff_post(request):
-    staffname = request.POST['name']
-    email = request.POST['email']
-    phone = request.POST['phone']
-    gender = request.POST['gender']
-    place = request.POST['place']
-    city = request.POST['city']
-    dob = request.POST['dob']
-    state = request.POST['state']
-    pincode = request.POST['pincode']
-    id=request.POST['id']
-
-
-
-    a = Staff.objects.get(id=id)
-    a.staffname = staffname
-    a.email = email
-    a.phone = phone
-    a.gender = gender
-    a.place = place
-    a.city = city
-    a.state = state
-    a.pincode = pincode
-    a.dob = dob
-    a.save()
-
-    return redirect('/myapp/admin_viewstaff_get')
-
 
 
 def admin_editstudent_get(request,id):
@@ -516,22 +562,111 @@ def admin_editstudent_post(request):
 
 
 
-def admin_editsystem_get(request):
-    return render(request, "adminpage/edit_system.html")
+
+#add   assist allocation
+def admin_assistallocation_get(request):
+    data=Lab.objects.all()
+    data1=Labassistant.objects.all()
+    return render(request, 'adminpage/assist_allocation.html',{'data':data,'data1':data1})
 
 
-def admin_editsystem_post(request):
-    return
+def admin_assistallocation_post(request):
+    labname=request.POST['labs']
+    labassistantname=request.POST['labassist']
 
+
+    a=Laballocation()
+    a.date = datetime.now().today()
+    a.status='pending'
+    a.LAB=Lab.objects.get(id=labname)
+    a.LABASSIST=Labassistant.objects.get(id=labassistantname)
+    a.save()
+
+    return redirect('/myapp/admin_viewassist_allocation_get/')
+
+
+def admin_editassistallocation_get(request,id):
+    data=Lab.objects.all()
+    data1=Labassistant.objects.all()
+    data2=Laballocation.objects.get(id=id)
+    return render(request, "adminpage/edit_assist_allocation.html",{'data':data,'data1':data1,'data2':data2})
+
+
+def admin_editassistallocation_post(request):
+    labname = request.POST['labs']
+    labassistantname = request.POST['labassist']
+    id=request.POST['id']
+
+    a = Laballocation.objects.get(id=id)
+    a.date = datetime.now().today()
+    a.status = 'pending'
+    a.LAB = Lab.objects.get(id=labname)
+    a.LABASSIST = Labassistant.objects.get(id=labassistantname)
+    a.save()
+
+    return redirect('/myapp/admin_viewassist_allocation_get/')
+
+def admin_deleteassistallocation_post(request,id):
+    Laballocation.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewassist_allocation_get/')
 
 def admin_viewassist_allocation_get(request):
-    return render(request, "adminpage/view_assist_allocation.html")
+    data=Laballocation.objects.all()
+    return render(request,"adminpage/view_assist_allocation.html",{'data':data})
 
 
-def admin_viewassist_allocation_post(request):
-    return
+#staff sub allocation
+def admin_staffsuballoc_get(request):
+    data=Staff.objects.all()
+    data1=Labsubject.objects.all()
+
+    return render(request,"adminpage/admin_staff_sub_alloc.html",{'data':data,'data1':data1})
+
+def admin_staffsuballoc_post(request):
+    staff=request.POST['staff']
+    subject=request.POST['subject']
+    a=Labsuballocation()
+    a.date=datetime.now().today()
+    a.status='allocated'
+    a.LABSUB=Labsubject.objects.get(id=subject)
+    a.STAFF=Staff.objects.get(id=staff)
+    a.save()
 
 
+    return redirect('/myapp/admin_viewsuballoc/')
+
+
+def admin_edit_staffsuballoc_get(request,id):
+    data=Staff.objects.all()
+    data1=Labsubject.objects.all()
+    data2=Labsuballocation.objects.get(id=id)
+    return render(request,"adminpage/admin_edit_staffsub_alloc.html",{'data':data,'data1':data1,'data2':data2})
+
+def admin_edit_staffsuballoc_post(request):
+    staff=request.POST['staff']
+    subject=request.POST['subject']
+    id=request.POST['id']
+    a=Labsuballocation.objects.get(id=id)
+    a.date=datetime.now().today()
+    a.LABSUB_id=subject
+    a.STAFF_id=staff
+    a.save()
+
+
+    return redirect('/myapp/admin_viewsuballoc/')
+
+def admin_delete_staffsuballoc(request,id):
+    Labsuballocation.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewsuballoc/')
+
+
+def admin_viewsuballoc(request):
+    data=Labsuballocation.objects.all()
+    return render(request,'adminpage/view_staff_sub_allocation.html',{'data':data})
+
+#start of view functions of admin module
+
+#view course
 def admin_viewcourse_get(request):
     data=Course.objects.all()
 
@@ -541,7 +676,7 @@ def admin_viewcourse_get(request):
 def admin_viewcourse_post(request):
     return
 
-
+#view department
 def admin_viewdepartment_get(request):
     data=Departement.objects.all()
     return render(request, "adminpage/view_department.html",{'data':data})
@@ -551,7 +686,7 @@ def admin_viewdepartment_get(request):
 def admin_viewdepartment_post(request):
     return
 
-
+#view lab
 def admin_viewlab_get(request):
     data=Lab.objects.all()
     return render(request, "adminpage/view_lab.html",{'data':data})
@@ -561,6 +696,7 @@ def admin_viewlab_post(request):
     return
 
 
+#view lab assistant
 def admin_viewlabassist_get(request):
     data=Labassistant.objects.all()
     return render(request, "adminpage/view_labassist.html",{'data':data})
@@ -570,6 +706,7 @@ def admin_viewlabassist_post(request):
     return
 
 
+#view labsub
 def admin_viewlabsub_get(request):
     data=Labsubject.objects.all()
     return render(request, "adminpage/view_labsub.html",{'data':data})
@@ -579,14 +716,11 @@ def admin_viewlabsub_post(request):
     return
 
 
-def admin_viewlabsub_schedule_get(request):
-    return render(request, "adminpage/view_labsub_schedule.html")
+#view labsub schedule
 
 
-def admin_viewlabsub_schedule_post(request):
-    return
 
-
+#view staff
 def admin_viewstaff_get(request):
     data=Staff.objects.all()
     return render(request, "adminpage/view_staff.html",{'data':data})
@@ -595,7 +729,7 @@ def admin_viewstaff_get(request):
 def admin_viewstaff_post(request):
     return
 
-
+#view student
 def admin_viewstudent_get(request):
     data=Student.objects.all()
     return render(request, "adminpage/view_student.html",{'data':data})
@@ -605,12 +739,6 @@ def admin_viewstudent_post(request):
     return
 
 
-def admin_viewsystem_get(request):
-    return render(request, "adminpage/view_system.html")
-
-
-def admin_viewsystem_post(request):
-    return
 
 
 def admin_blockedapps_get(request):
@@ -620,14 +748,13 @@ def admin_blockedapps_get(request):
 def admin_blockedapps_post(request):
     return
 
-
+#view attendance report
 def admin_viewattendance_report_get(request):
     return render(request, "adminpage/view_attendance_report.html")
 
 
 def admin_viewstaff_suballoc_get(request):
     return render(request, "adminpage/view_staff_sub_allocation.html")
-
 
 
 
@@ -643,6 +770,10 @@ def admin_viewstaff_suballoc_get(request):
 
 #lab assistant module
 
+def labassist_index_get(request):
+    return render(request,"labassistpage/labassist_index.html")
+
+
 def labassist_addsys_healthreport_get(request):
     return render(request,"labassistpage/labassist_add_sys_health_rep.html")
 
@@ -650,12 +781,75 @@ def labassist_addsys_healthreport_post(request):
     return
 
 
+#add system
+def admin_addsystem_get(request):
+    data=Lab.objects.all()
+    return render(request, "labassistpage/add_system.html",{'data':data})
+
+
+def admin_addsystem_post(request):
+    systemno=request.POST['systemno']
+    macaddress=request.POST['macaddress']
+
+    l=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+
+    a=System()
+    a.systemno=systemno
+    a.macaddress=macaddress
+    a.LAB_id=l.LAB.id
+    a.save()
+    return redirect('/myapp/admin_viewsystem_get/')
+
+
+def admin_editsystem_get(request,id):
+    data= System.objects.get(id=id)
+    data2=Lab.objects.all()
+    return render(request, "labassistpage/edit_system.html",{'data':data,'data2':data2})
+
+
+def admin_editsystem_post(request):
+    systemno = request.POST['systemno']
+    macaddress = request.POST['macaddress']
+    id = request.POST['id']
+
+    a = System.objects.get(id=id)
+    a.systemno = systemno
+    a.macaddress = macaddress
+    a.save()
+    return redirect('/myapp/admin_viewsystem_get/')
+
+
+
+def admin_deletesystem_get(request,id):
+    System.objects.get(id=id).delete()
+    return redirect('/myapp/admin_viewsystem_get/')
+
+#view system
+def admin_viewsystem_get(request):
+    data = System.objects.all()
+    return render(request, "labassistpage/view_system.html", {'data': data})
+
+
+
 
 def labassist_allocatesys_student_get(request):
-    return render(request,"labassistpage/labassist_allocate_sys_student.html")
+    s=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+    student=Student.objects.all()
+    system=System.objects.filter(LAB=s.LAB.id)
+    return render(request,"labassistpage/labassist_allocate_sys_student.html",{'student':student,'system':system})
 
 def labassist_allocatesys_student_post(request):
-    return
+    student=request.POST['student']
+    system=request.POST['system']
+
+    a=Systemallocation()
+    a.SYSTEM_id=system
+    a.STUDENT_id=student
+    a.date=datetime.now().date()
+    a.status='pending'
+    a.save()
+
+    return redirect('/myapp/labassist_view_sys_allocation_get/')
 
 
 def labassist_syst_monitor_get(request):
@@ -666,13 +860,17 @@ def labassist_syst_monitor_post(request):
 
 
 def labassist_view_alloc_lab_get(request):
-    return render(request,"labassistpage/labassist_view_allocated_labs.html")
+    data=Laballocation.objects.filter(LABASSIST__USER_id=request.user)
+    return render(request,"labassistpage/labassist_view_allocated_labs.html",{'data':data})
 
 def labassist_view_profile_get(request):
-    return render(request,"labassistpage/labassist_view_profile.html")
+    data=Labassistant.objects.get(USER_id=request.user)
+    return render(request,"labassistpage/labassist_view_profile.html",{'data':data})
 
 def labassist_view_sys_allocation_get(request):
-    return render(request, "labassistpage/labassist_view_sys_allocation.html")
+    s=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+    data=Systemallocation.objects.filter(SYSTEM__LAB=s.LAB.id)
+    return render(request, "labassistpage/labassist_view_sys_allocation.html",{'data':data})
 
 
 def labassist_view_sys_healthreport_get(request):

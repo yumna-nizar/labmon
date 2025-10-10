@@ -16,8 +16,8 @@
 {#</head>#}
 {#<body>#}
   <div class="container">
-    <h2 class="mb-4 text-center">Add Lab Assistant</h2>
-    <form action="/myapp/admin_addlabassist_post/" method="post">
+    <h2 class="mb-4 text-center">Edit Lab Assistant</h2>
+    <form action="/myapp/admin_editlabassist_post/" method="post">
         {% csrf_token %}
         <input type="hidden" value="{{ data.id }}" name="id">
       <div class="row mb-3">
