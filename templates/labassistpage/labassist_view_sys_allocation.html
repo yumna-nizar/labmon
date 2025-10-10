@@ -33,20 +33,17 @@
                         <th>Student</th>
                         <th>Time</th>
                         <th>System</th>
-                        
-
-
-
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- Sample Data Rows -->
+                    {% for i in data %}
                     <tr>
-                        <td width="5%">1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td width="5%">{{ forloop.counter }}</td>
+                        <td>{{ i.STUDENT.studentname }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.SYSTEM.systemno }}</td>
                         <td width="15%">
                             <a class="btn btn-sm btn-danger">Delete</a>
                             
@@ -54,6 +51,7 @@
 
                         </td>
                     </tr>
+                    {% endfor %}
 
                     <!-- Add more rows as needed -->
                 </tbody>

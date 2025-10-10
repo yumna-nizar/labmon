@@ -34,6 +34,7 @@ urlpatterns = [
     path('admin_addlabsub_post/',views.admin_addlabsub_post),
 
     path('admin_addlabsub_schedule_get/',views.admin_addlabsub_schedule_get),
+
     path('admin_addlabsub_schedule_post/',views.admin_addlabsub_schedule_post),
 
 
@@ -52,7 +53,8 @@ urlpatterns = [
     path('admin_assistallocation_post/',views.admin_assistallocation_post),
 
 
-    path('admin_editassistallocation_get/',views.admin_editassistallocation_get),
+    path('admin_editassistallocation_get/<id>',views.admin_editassistallocation_get),
+    path('admin_deleteassistallocation_post/<id>',views.admin_deleteassistallocation_post),
     path('admin_editassistallocation_post/',views.admin_editassistallocation_post),
 
     path('admin_editcourse_get/<id>',views.admin_editcourse_get),
@@ -69,7 +71,8 @@ urlpatterns = [
     path('admin_editlab_post/',views.admin_editlab_post),
 
 
-    path('admin_editlabassist_get/',views.admin_editlabassist_get),
+    path('admin_editlabassist_get/<id>',views.admin_editlabassist_get),
+    path('admin_deletelabassist_get/<id>',views.admin_deletelabassist_get),
     path('admin_editlabassist_post/',views.admin_editlabassist_post),
 
 
@@ -78,23 +81,22 @@ urlpatterns = [
     path('admin_editlabsub_post/',views.admin_editlabsub_post),
 
 
-    path('admin_editlab_schedule_get/',views.admin_editlab_schedule_get),
+    path('admin_editlab_schedule_get/<id>',views.admin_editlab_schedule_get),
+    path('admin_deletelabsub_schedule_get/<id>',views.admin_deletelabsub_schedule_get),
     path('admin_editlab_schedule_post/',views.admin_editlab_schedule_post),
 
-    path('admin_editstaff_get/',views.admin_editstaff_get),
+    path('admin_editstaff_get/<id>',views.admin_editstaff_get),
+    path('admin_deletestaff_get/<id>',views.admin_deletestaff_get),
     path('admin_editstaff_post/',views.admin_editstaff_post),
 
 
-    path('admin_editstudent_get/',views.admin_editstudent_get),
+    path('admin_editstudent_get/<id>',views.admin_editstudent_get),
+    path('admin_deletestudent_get/<id>',views.admin_deletestudent_get),
     path('admin_editstudent_post/',views.admin_editstudent_post),
 
 
     path('admin_editsystem_get/',views.admin_editsystem_get),
     path('admin_editsystem_post/',views.admin_editsystem_post),
-
-
-    path('admin_viewassist_allocation_get/',views.admin_viewassist_allocation_get),
-    path('admin_viewassist_allocation_post/',views.admin_viewassist_allocation_post),
 
 
     path('admin_viewcourse_get/',views.admin_viewcourse_get),
@@ -129,9 +131,13 @@ urlpatterns = [
     path('admin_viewstudent_get/',views.admin_viewstudent_get),
     path('admin_viewstudent_post/',views.admin_viewstudent_post),
 
+    path('admin_viewassist_allocation_get/',views.admin_viewassist_allocation_get),
+    # path('admin_viewassist_allocation_post/',views.admin_viewassist_allocation_post),
+
+
 
     path('admin_viewsystem_get/',views.admin_viewsystem_get),
-    path('admin_viewsystem_post/',views.admin_viewsystem_post),
+    # path('admin_viewsystem_post/',views.admin_viewsystem_post),
 
 
     path('admin_blockedapps_get/',views.admin_blockedapps_get),
@@ -140,12 +146,31 @@ urlpatterns = [
 
     path('admin_viewattendance_report_get/',views.admin_viewattendance_report_get),
 
-    path('admin_viewstaff_suballoc_get/',views.admin_viewstaff_suballoc_get),
+    path('admin_staffsuballoc_get/',views.admin_staffsuballoc_get),
+    path('admin_staffsuballoc_post/',views.admin_staffsuballoc_post),
+
+    path('admin_edit_staffsuballoc_get/<id>',views.admin_edit_staffsuballoc_get),
+    path('admin_edit_staffsuballoc_post/',views.admin_edit_staffsuballoc_post),
+    path('admin_delete_staffsuballoc/<id>',views.admin_delete_staffsuballoc),
+
+    path('admin_viewsuballoc/',views.admin_viewsuballoc),
 
 
 
 
-    #starting of lab assstant module
+    #starting of lab assistant module
+
+    path('labassist_index_get/', views.labassist_index_get),
+
+
+
+
+    path('admin_addsystem_get/', views.admin_addsystem_get),
+    path('admin_addsystem_post/', views.admin_addsystem_post),
+    path('admin_editsystem_get/<id>', views.admin_editsystem_get),
+    path('admin_editsystem_post/', views.admin_editsystem_post),
+    path('admin_deletesystem_get/<id>', views.admin_deletesystem_get),
+    path('admin_viewsystem_get/', views.admin_viewsystem_get),
 
     path('labassist_addsys_healthreport_get/',views.labassist_addsys_healthreport_get),
     path('labassist_addsys_healthreport_post/',views.labassist_addsys_healthreport_post),
