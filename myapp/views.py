@@ -28,6 +28,9 @@ def login_post(request):
         elif user.groups.filter(name='Lab assistant').exists():
             messages.success(request, 'login successfully')
             return redirect('/myapp/labassist_index_get/')
+        elif user.groups.filter(name='Staff').exists():
+            messages.success(request, 'login successfully')
+            return redirect('/myapp/staff_index/')
 
         else:
             messages.success(request, 'invalid user')
@@ -36,6 +39,13 @@ def login_post(request):
     else:
         messages.success(request, 'invalid user')
         return redirect('/myapp/login_get/')
+
+
+def staff_index(request):
+    return render(request,'staffpage/Staff_index.html')
+
+
+
 
 
 def admin_home(request):
@@ -770,24 +780,40 @@ def admin_viewstaff_suballoc_get(request):
 
 #lab assistant module
 
+
+
+
+
 def labassist_index_get(request):
     return render(request,"labassistpage/labassist_index.html")
 
 
 def labassist_addsys_healthreport_get(request):
-    return render(request,"labassistpage/labassist_add_sys_health_rep.html")
+    data = System.objects.all()
+    return render(request,"labassistpage/labassist_add_sys_health_rep.html",{'data':data})
 
 def labassist_addsys_healthreport_post(request):
-    return
+    sid=request.POST['system']
+    message=request.POST['message']
+
+
+    h=Healthreport()
+    h.SYSTEM_id=sid
+    h.problem=message
+    h.solvedstatus="pending"
+    h.date=datetime.now()
+    h.time=datetime.now().time()
+    h.save()
+    return redirect('/myapp/labassist_addsys_healthreport_get/')
 
 
 #add system
-def admin_addsystem_get(request):
+def labassist_addsystem_get(request):
     data=Lab.objects.all()
     return render(request, "labassistpage/add_system.html",{'data':data})
 
 
-def admin_addsystem_post(request):
+def labassist_addsystem_post(request):
     systemno=request.POST['systemno']
     macaddress=request.POST['macaddress']
 
@@ -798,16 +824,16 @@ def admin_addsystem_post(request):
     a.macaddress=macaddress
     a.LAB_id=l.LAB.id
     a.save()
-    return redirect('/myapp/admin_viewsystem_get/')
+    return redirect('/myapp/labassist_viewsystem_get/')
 
 
-def admin_editsystem_get(request,id):
+def labassist_editsystem_get(request,id):
     data= System.objects.get(id=id)
     data2=Lab.objects.all()
     return render(request, "labassistpage/edit_system.html",{'data':data,'data2':data2})
 
 
-def admin_editsystem_post(request):
+def labassist_editsystem_post(request):
     systemno = request.POST['systemno']
     macaddress = request.POST['macaddress']
     id = request.POST['id']
@@ -816,16 +842,16 @@ def admin_editsystem_post(request):
     a.systemno = systemno
     a.macaddress = macaddress
     a.save()
-    return redirect('/myapp/admin_viewsystem_get/')
+    return redirect('/myapp/labassist_viewsystem_get/')
 
 
 
-def admin_deletesystem_get(request,id):
+def labassist_deletesystem_get(request,id):
     System.objects.get(id=id).delete()
-    return redirect('/myapp/admin_viewsystem_get/')
+    return redirect('/myapp/labassist_viewsystem_get/')
 
 #view system
-def admin_viewsystem_get(request):
+def labassist_viewsystem_get(request):
     data = System.objects.all()
     return render(request, "labassistpage/view_system.html", {'data': data})
 
@@ -852,11 +878,7 @@ def labassist_allocatesys_student_post(request):
     return redirect('/myapp/labassist_view_sys_allocation_get/')
 
 
-def labassist_syst_monitor_get(request):
-    return render(request,"labassistpage/labassist_system_monitor.html")
 
-def labassist_syst_monitor_post(request):
-    return
 
 
 def labassist_view_alloc_lab_get(request):
@@ -872,9 +894,55 @@ def labassist_view_sys_allocation_get(request):
     data=Systemallocation.objects.filter(SYSTEM__LAB=s.LAB.id)
     return render(request, "labassistpage/labassist_view_sys_allocation.html",{'data':data})
 
+def labassist_delete_sys_allocation_get(request,id):
+    Systemallocation.objects.get(id=id).delete()
+    return  redirect('/myapp/labassist_view_sys_allocation_get/#abc')
+
 
 def labassist_view_sys_healthreport_get(request):
-    return render(request, "labassistpage/labassist_view_sys_health_reports.html")
+    data=Healthreport.objects.all()
+    return render(request, "labassistpage/labassist_view_sys_health_reports.html",{'data':data})
+
+
+
+def labassist_syst_monitor_get(request):
+    data = System.objects.all()
+    return render(request,"labassistpage/labassist_system_monitor.html",{'data':data})
+
+def labassist_syst_monitor_post(request):
+    return
+
+def labassist_view_filelogs_get(request,id):
+    data=Filelogs.objects.filter(id=id)
+    return render(request,"labassistpage/labassist_view_file_logs.html",{'data':data})
+
+
+def labassist_view_processlogs_get(request,id):
+    data=ProcessLogs.objects.filter(id=id)
+    return render(request,"labassistpage/labassist_view_process_logs.html",{'data':data})
+
+def labassist_view_keylogs_get(request,id):
+    data = Keylogs.objects.filter(id=id)
+    return render(request,"labassistpage/labassist_view_key_logs.html",{'data':data})
+
+
+def labassist_command_invocation_get(request, id):
+    return render(request,"labassistpage/labassist_command_invocation.html")
+
+def labassist_command_invocation_post(request):
+    command=request.POST['command']
+    a=Command()
+    a.date=datetime.now().today()
+    a.time=datetime.now().time()
+    a.status='pending'
+    a.STAFF=request.user
+    a.save()
+    return redirect('/myapp/labassist_command_invocation_get/')
+
+
+def labassist_view_scrnshot_get(request,id):
+    data=Screenshots.objects.all()
+    return  render(request,"labassistpage/labassist_view_screenshot.html",{'data':data})
 
 #ending of labassist module
 
@@ -884,6 +952,7 @@ def labassist_view_sys_healthreport_get(request):
 
 
 #staff module
+
 
 def staff_command_invoc_get(request):
     return render(request, "staffpage/staff_command_invocation.html")
@@ -914,7 +983,9 @@ def staff_viewstud_complaint_get(request):
     return  render(request,"staffpage/staff_view_student_complaint.html")
 
 def staff_view_profile_get(request):
-    return render(request,"staffpage/staff_view_profile.html")
+    d=request.user
+    data=Staff.objects.get(USER_id=d)
+    return render(request,"staffpage/staff_view_profile.html",{'data':data})
 
 
 
@@ -923,7 +994,9 @@ def staff_view_system_get(request):
 
 
 def staff_view_alloc_sub_get(request):
-    return render(request,"staffpage/staff_view_allocated_subject.html")
+    d=request.user
+    data=Labsuballocation.objects.filter(STAFF__USER_id=d)
+    return render(request,"staffpage/staff_view_allocated_subject.html",{'data':data})
 
 
 
