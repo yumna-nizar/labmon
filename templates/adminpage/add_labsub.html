@@ -20,7 +20,20 @@
 
                 <div class="form-group">
                     <label for="sem">subject</label>
-                    <input type="text" class="form-control" id="sem" name="sub" placeholder="Enter the subject " required>
+                    <input type="text" class="form-control" id="sub" name="sub" placeholder="Enter the subject " required>
+                </div>
+                <div class="form-group">
+                    <label for="sem">Semester</label>
+                    <input type="text" class="form-control" id="sem" name="sem" placeholder="Enter the semester " required>
+                </div>
+                <div class="form-group">
+                    <label for="sem">Course</label>
+                    <select class="form-select" name="cid">
+                        {% for i in data %}
+                        <option value="{{ i.id }}">{{ i.coursename }}</option>
+                    {% endfor %}
+
+</select>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-block">Submit</button>
