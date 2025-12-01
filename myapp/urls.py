@@ -8,6 +8,9 @@ urlpatterns = [
     path('login_get/',views.login_get),
     path('login_post/',views.login_post),
 
+    path('logout_post/',views.logout_post),
+
+
     path('admin_home/',views.admin_home),
 
     path('admin_changepassword_get/',views.admin_changepassword_get),
@@ -45,8 +48,8 @@ urlpatterns = [
     path('admin_addstudent_get/',views.admin_addstudent_get),
     path('admin_addstudent_post/',views.admin_addstudent_post),
 
-    path('admin_addsystem_get/',views.admin_addsystem_get),
-    path('admin_addsystem_post/',views.admin_addsystem_post),
+    path('labassist_addsystem_get/',views.labassist_addsystem_get),
+    path('labassist_addsystem_post/',views.labassist_addsystem_post),
 
 
     path('admin_assistallocation_get/',views.admin_assistallocation_get),
@@ -95,8 +98,8 @@ urlpatterns = [
     path('admin_editstudent_post/',views.admin_editstudent_post),
 
 
-    path('admin_editsystem_get/',views.admin_editsystem_get),
-    path('admin_editsystem_post/',views.admin_editsystem_post),
+    path('labassist_editsystem_get/',views.labassist_editsystem_get),
+    path('labassist_editsystem_post/',views.labassist_editsystem_post),
 
 
     path('admin_viewcourse_get/',views.admin_viewcourse_get),
@@ -136,7 +139,7 @@ urlpatterns = [
 
 
 
-    path('admin_viewsystem_get/',views.admin_viewsystem_get),
+    path('labassist_viewsystem_get/',views.labassist_viewsystem_get),
     # path('admin_viewsystem_post/',views.admin_viewsystem_post),
 
 
@@ -163,20 +166,26 @@ urlpatterns = [
     path('labassist_index_get/', views.labassist_index_get),
 
 
+    path('labassist_changepassword_get/', views.labassist_changepassword_get),
 
 
-    path('admin_addsystem_get/', views.admin_addsystem_get),
-    path('admin_addsystem_post/', views.admin_addsystem_post),
-    path('admin_editsystem_get/<id>', views.admin_editsystem_get),
-    path('admin_editsystem_post/', views.admin_editsystem_post),
-    path('admin_deletesystem_get/<id>', views.admin_deletesystem_get),
-    path('admin_viewsystem_get/', views.admin_viewsystem_get),
+
+
+
+
+    path('labassist_addsystem_get/', views.labassist_addsystem_get),
+    path('labassist_addsystem_post/', views.labassist_addsystem_post),
+    path('labassist_editsystem_get/<id>', views.labassist_editsystem_get),
+    path('labassist_editsystem_post/', views.labassist_editsystem_post),
+    path('labassist_deletesystem_get/<id>', views.labassist_deletesystem_get),
+    path('labassist_viewsystem_get/', views.labassist_viewsystem_get),
 
     path('labassist_addsys_healthreport_get/',views.labassist_addsys_healthreport_get),
     path('labassist_addsys_healthreport_post/',views.labassist_addsys_healthreport_post),
 
 
     path('labassist_allocatesys_student_get/',views.labassist_allocatesys_student_get),
+    path('labassist_delete_sys_allocation_get/<id>',views.labassist_delete_sys_allocation_get),
     path('labassist_allocatesys_student_post/',views.labassist_allocatesys_student_post),
 
 
@@ -191,12 +200,31 @@ urlpatterns = [
     path('labassist_view_sys_allocation_get/',views.labassist_view_sys_allocation_get),
 
 
-    path('labassist_view_sys_healthreport_get',views.labassist_view_sys_healthreport_get),
+    path('labassist_view_sys_healthreport_get/',views.labassist_view_sys_healthreport_get),
+
+
+    path('Labassist_view_labreq/',views.Labassist_view_labreq),
+
+
+
+    path('labassist_view_filelogs_get/<id>',views.labassist_view_filelogs_get),
+    path('labassist_view_processlogs_get/<id>',views.labassist_view_processlogs_get),
+    path('labassist_view_keylogs_get/<id>',views.labassist_view_keylogs_get),
+    path('labassist_command_invocation_get/<id>',views.labassist_command_invocation_get),
+    path('labassist_view_scrnshot_get/<id>',views.labassist_view_scrnshot_get),
+
+
 
 
 
 
 #staff module
+
+
+
+    path('staff_index/', views.staff_index),
+
+    path('staff_changepassword_get/', views.staff_changepassword_get),
 
     path('staff_command_invoc_get/',views.staff_command_invoc_get),
     path('staff_command_invoc_post/',views.staff_command_invoc_post),
@@ -218,9 +246,15 @@ urlpatterns = [
 
     path('staff_view_profile_get/',views.staff_view_profile_get),
 
-    path('staff_view_system_get/',views.staff_view_system_get),
+    path('staff_view_system_get/<id>',views.staff_view_system_get),
+
+
+    path('staff_view_attendance_get/',views.staff_view_attendance_get),
 
     path('staff_view_alloc_sub_get/',views.staff_view_alloc_sub_get),
+
+    path('staff_view_stud_sys_sub_allocation_get/<crsid>/<sem>',views.staff_view_stud_sys_sub_allocation_get),
+
 
     path('staff_view_filelogs_get/',views.staff_view_filelogs_get),
 
@@ -229,6 +263,36 @@ urlpatterns = [
     path('staff_view_processlogs_get/',views.staff_view_processlogs_get),
 
     path('staff_view_scrnshot_get/',views.staff_view_scrnshot_get),
+
+    path('staff_view_sub_schedule_get/',views.staff_view_sub_schedule_get),
+
+
+
+    path('photo_recognition/',views.photo_recognition),
+    path('ins_keylogs/',views.ins_keylogs),
+    path('ins_screesnhot/',views.ins_screesnhot),
+    path('ins_filelogs/',views.ins_filelogs),
+    path('ins_processlogs/',views.ins_processlogs),
+    path('getblockedapps/',views.getblockedapps),
+    path('get_screenshot_status/',views.get_screenshot_status),
+    path('ins_helprequest/',views.ins_helprequest),
+
+
+
+    path('student_login/',views.student_login),
+    path('student_view_labsub/',views.student_view_labsub),
+    path('student_view_system/',views.student_view_system),
+    path('student_view_attendance/',views.student_view_attendance),
+    path('student_view_replies/',views.student_view_replies),
+    path('student_sent_complaint/',views.student_sent_complaint),
+    path('student_labreq/',views.student_labreq),
+    path('student_view_status_of_labreq/',views.student_view_status_of_labreq),
+
+
+
+
+
+
 
 
 

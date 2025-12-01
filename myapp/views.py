@@ -1,9 +1,11 @@
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.models import User, Group
 from django.core.files.storage import FileSystemStorage
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 
@@ -26,9 +28,11 @@ def login_post(request):
             messages.success(request,'login successfully')
             return redirect('/myapp/admin_home/')
         elif user.groups.filter(name='Lab assistant').exists():
+            print('lab')
             messages.success(request, 'login successfully')
             return redirect('/myapp/labassist_index_get/')
         elif user.groups.filter(name='Staff').exists():
+            print('staff')
             messages.success(request, 'login successfully')
             return redirect('/myapp/staff_index/')
 
@@ -45,16 +49,20 @@ def staff_index(request):
     return render(request,'staffpage/Staff_index.html')
 
 
-
+def logout_post(request):
+    logout(request)
+    return redirect('/myapp/login_get/')
 
 
 def admin_home(request):
     return render(request,"adminpage/admin_index.html")
 
-
+@login_required(login_url='myapp/login_get/')
 def admin_changepassword_get(request):
     return render(request,"adminpage/admin_change_password.html")
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_changepassword_post(request):
     old_pass = request.POST['old_pass']
     new_pass = request.POST['new_pass']
@@ -78,11 +86,14 @@ def admin_changepassword_post(request):
 
 
 #add course
+@login_required(login_url='myapp/login_get/')
 def admin_addcourse_get(request):
     data=Departement.objects.all()
     return render(request, "adminpage/add_course.html",{'data':data})
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_add_course_post(request):
     course = request.POST['course']
     totsem = request.POST['totsem']
@@ -96,12 +107,16 @@ def admin_add_course_post(request):
     return redirect('/myapp/admin_viewcourse_get/')
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_editcourse_get(request,id):
     data=Departement.objects.all()
     data1=Course.objects.get(id=id)
     return render(request, "adminpage/edit_course.html",{'data':data,'data1':data1})
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_editcourse_post(request):
     course = request.POST['course']
     totsem = request.POST['totsem']
@@ -116,6 +131,8 @@ def admin_editcourse_post(request):
     return redirect('/myapp/admin_viewcourse_get/')
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_delete_course(request,id):
     Course.objects.get(id=id).delete()
     return redirect('/myapp/admin_viewcourse_get/')
@@ -123,11 +140,13 @@ def admin_delete_course(request,id):
 
 
 #add department
-
+@login_required(login_url='myapp/login_get/')
 def admin_add_department_get(request):
     return render(request, "adminpage/add_department.html")
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_add_department_post(request):
     dept = request.POST['dept']
 
@@ -137,11 +156,17 @@ def admin_add_department_post(request):
     a.save()
     return redirect('/myapp/admin_viewdepartment_get/')
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editdepartment_get(request,id):
     data=Departement.objects.get(id=id)
     return render(request, "adminpage/edit_department.html",{'data':data})
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editdepartment_post(request):
     dept = request.POST['dept']
     id=request.POST['id']
@@ -152,6 +177,8 @@ def admin_editdepartment_post(request):
     return redirect('/myapp/admin_viewdepartment_get/')
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_delete_department(request,id):
     Departement.objects.get(id=id).delete()
     return redirect('/myapp/admin_viewdepartment_get/')
@@ -159,10 +186,13 @@ def admin_delete_department(request,id):
 
 
 #add lab
+@login_required(login_url='myapp/login_get/')
 def admin_addlab_get(request):
     return render(request, "adminpage/add_lab.html")
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlab_post(request):
     lab=request.POST['labname']
     labno=request.POST['labno']
@@ -173,10 +203,16 @@ def admin_addlab_post(request):
     a.save()
     return redirect('/myapp/admin_viewlab_get/')
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlab_get(request,id):
     data=Lab.objects.get(id=id)
     return render(request, "adminpage/edit_lab.html",{'data':data})
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlab_post(request):
     id=request.POST['id']
     lab=request.POST['labname']
@@ -189,16 +225,22 @@ def admin_editlab_post(request):
     return redirect('/myapp/admin_viewlab_get/')
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_deletelab(request,id):
     Lab.objects.get(id=id).delete()
     return redirect('/myapp/admin_viewlab_get/')
 
 
 #add lab assistant
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlabassist_get(request):
     return render(request, "adminpage/add_labassist.html")
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlabassist_post(request):
     labassistantname=request.POST['name']
     email = request.POST['email']
@@ -212,6 +254,7 @@ def admin_addlabassist_post(request):
 
     if User.objects.filter(username=email).exists():
         messages.warning(request,'already exist')
+        return redirect('/myapp/admin_viewlabassist_get/')
     else:
 
 
@@ -235,13 +278,16 @@ def admin_addlabassist_post(request):
         return redirect('/myapp/admin_viewlabassist_get/')
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlabassist_get(request,id):
     data=Labassistant.objects.get(id=id)
 
     return render(request, "adminpage/edit_labassist.html",{'data':data})
 
 
-
+@login_required(login_url='myapp/login_get/')
 def admin_editlabassist_post(request):
     labassistantname=request.POST['name']
     email = request.POST['email']
@@ -267,6 +313,8 @@ def admin_editlabassist_post(request):
     a.save()
     return redirect('/myapp/admin_viewlabassist_get/')
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_deletelabassist_get(request, id):
     Labassistant.objects.get(USER_id=id).delete()
     User.objects.get(id=id).delete()
@@ -274,23 +322,39 @@ def admin_deletelabassist_get(request, id):
 
 
 #add lab sub
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlabsub_get(request):
-    return render(request, "adminpage/add_labsub.html")
+    data=Course.objects.all()
+    return render(request, "adminpage/add_labsub.html",{'data':data})
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlabsub_post(request):
     sub=request.POST['sub']
+    cid=request.POST['cid']
+    sem=request.POST['sem']
 
     a=Labsubject()
     a.subject=sub
+    a.COURSE_id=cid
+    a.sem=sem
     a.save()
     return redirect("/myapp/admin_viewlabsub_get/")
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlabsub_get(request,id):
     data=Labsubject.objects.get(id=id)
     return render(request, "adminpage/edit_labsub.html",{'data':data})
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlabsub_post(request):
     sub = request.POST['sub']
     id=request.POST['id']
@@ -301,6 +365,8 @@ def admin_editlabsub_post(request):
     return redirect("/myapp/admin_viewlabsub_get/")
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_delete_labsub(request,id):
     Labsubject.objects.get(id=id).delete()
     return redirect("/myapp/admin_viewlabsub_get/")
@@ -308,6 +374,7 @@ def admin_delete_labsub(request,id):
 
 
 #add labsub schedule
+@login_required(login_url='myapp/login_get/')
 def admin_addlabsub_schedule_get(request):
     lab=Laballocation.objects.all()
     course=Course.objects.all()
@@ -316,6 +383,9 @@ def admin_addlabsub_schedule_get(request):
     return render(request, "adminpage/add_labsub_schedule.html",{'lab':lab,'course':course,'labsub':sub})
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_addlabsub_schedule_post(request):
     lab=request.POST['lab']
     course=request.POST['course']
@@ -336,6 +406,8 @@ def admin_addlabsub_schedule_post(request):
     return redirect('/myapp/admin_viewlabsub_schedule_get/')
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_editlab_schedule_get(request,id):
     lab=Laballocation.objects.all()
     course=Course.objects.all()
@@ -346,7 +418,7 @@ def admin_editlab_schedule_get(request,id):
 
 
 
-
+@login_required(login_url='myapp/login_get/')
 def admin_editlab_schedule_post(request):
     lab = request.POST['lab']
     course = request.POST['course']
@@ -369,24 +441,39 @@ def admin_editlab_schedule_post(request):
 
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_viewlabsub_schedule_get(request):
     data=Labsubjectschedule.objects.all()
     return render(request, "adminpage/view_labsub_schedule.html",{'data':data})
 
 
+
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_deletelabsub_schedule_get(request,id):
     Labsubjectschedule.objects.get(id=id).delete()
     return redirect('/myapp/admin_viewlabsub_schedule_get/')
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_viewlabsub_schedule_post(request):
     return
 
 #add staff
+
+@login_required(login_url='myapp/login_get/')
 def admin_addstaff_get(request):
-    return render(request, "adminpage/add_staff.html")
+    data=Departement.objects.all()
+    return render(request, "adminpage/add_staff.html",{'data':data})
 
 
+
+@login_required(login_url='myapp/login_get/')
 def admin_addstaff_post(request):
     staffname=request.POST['name']
     email = request.POST['email']
@@ -397,15 +484,19 @@ def admin_addstaff_post(request):
     dob = request.POST['dob']
     state = request.POST['state']
     pincode = request.POST['pincode']
+    dept = request.POST['dept']
+    print(staffname,state)
 
 
     if User.objects.filter(username=email).exists():
         messages.warning(request,'already exist')
+        return redirect('/myapp/admin_addstaff_get/')
     else:
 
         user = User.objects.create_user(username=email, password=phone)
         user.groups.add(Group.objects.get(name='Staff'))
         user.save()
+        print('scd')
 
 
         a=Staff()
@@ -419,11 +510,15 @@ def admin_addstaff_post(request):
         a.pincode = pincode
         a.USER=user
         a.dob=dob
+        a.DEP_id=dept
         a.save()
 
-        return redirect('/myapp/admin_viewstaff_get')
+        return redirect('/myapp/admin_viewstaff_get/')
 
 
+
+
+@login_required(login_url='myapp/login_get/')
 def admin_editstaff_get(request,id):
     data=Staff.objects.get(id=id)
 
@@ -431,7 +526,7 @@ def admin_editstaff_get(request,id):
 
 
 
-
+@login_required(login_url='myapp/login_get/')
 def admin_editstaff_post(request):
     staffname = request.POST['name']
     email = request.POST['email']
@@ -475,7 +570,7 @@ def admin_addstudent_get(request):
 
 
 def admin_addstudent_post(request):
-    studentname=request.POST['name']
+    studentname=request.POST['studentname']
     email=request.POST['email']
     phone=request.POST['phone']
     dob=request.POST['dob']
@@ -483,38 +578,40 @@ def admin_addstudent_post(request):
     place=request.POST['place']
     city=request.POST['city']
     state=request.POST['state']
+    sem=request.POST['sem']
     pincode=request.POST['pincode']
     photo=request.FILES['photo']
-
     cid=request.POST['cid']
+    user=User.objects.create_user(username=email,password='1234')
+    user.groups.add(Group.objects.get(name="Student"))
+    user.save()
 
     if User.objects.filter(username=email).exists():
         messages.warning(request,'already exist')
-    else:
-        fs=FileSystemStorage()
-        date=datetime.now().strftime('%Y%m%d%H%M%S')+'.jpg'
-        fs.save(date, photo)
-        path=fs.url(date)
+        return redirect('/myapp/admin_addstudent_get/')
 
 
-        user=User.objects.create_user(username=email, password=phone)
-        user.groups.add(Group.objects.get(name='Student'))
-        user.save()
 
+    fs=FileSystemStorage()
+    date=datetime.now().strftime('%Y%m%d%H%M%S')+'.jpg'
+    fs.save(date, photo)
+    path=fs.url(date)
 
-        a=Student()
-        a.studentname=studentname
-        a.email=email
-        a.phone=phone
-        a.dob=dob
-        a.gender=gender
-        a.place=place
-        a.city=city
-        a.state=state
-        a.pincode=pincode
-        a.photo=path
-        a.COURSE=Course.objects.get(id=cid)
-        a.save()
+    a=Student()
+    a.studentname=studentname
+    a.email=email
+    a.phone=phone
+    a.dob=dob
+    a.gender=gender
+    a.place=place
+    a.city=city
+    a.state=state
+    a.pincode=pincode
+    a.photo=path
+    a.sem=sem
+    a.COURSE=Course.objects.get(id=cid)
+    a.USER=user
+    a.save()
     return redirect('/myapp/admin_viewstudent_get/')
 
 
@@ -570,6 +667,14 @@ def admin_editstudent_post(request):
     return redirect('/myapp/admin_viewstudent_get/')
 
 
+
+def admin_viewstudent_get(request):
+    data=Student.objects.all()
+    return render(request, "adminpage/view_student.html",{'data':data})
+
+
+def admin_viewstudent_post(request):
+    return
 
 
 
@@ -740,19 +845,14 @@ def admin_viewstaff_post(request):
     return
 
 #view student
-def admin_viewstudent_get(request):
-    data=Student.objects.all()
-    return render(request, "adminpage/view_student.html",{'data':data})
 
-
-def admin_viewstudent_post(request):
-    return
 
 
 
 
 def admin_blockedapps_get(request):
-    return render(request, "adminpage/blocked_apps.html")
+    data=Blockedapps.objects.all()
+    return render(request, "adminpage/blocked_apps.html",{'data':data})
 
 
 def admin_blockedapps_post(request):
@@ -780,6 +880,30 @@ def admin_viewstaff_suballoc_get(request):
 
 #lab assistant module
 
+
+def labassist_changepassword_get(request):
+    return render(request,"labassistpage/labassist_change_password.html")
+
+def labassist_changepassword_post(request):
+    old_pass = request.POST['old_pass']
+    new_pass = request.POST['new_pass']
+    confirm_pass = request.POST['confirm_pass']
+
+    user= request.user
+    a = check_password(old_pass,request.user.password)
+    if a:
+        if new_pass==confirm_pass:
+            user=request.user
+            user.set_password(confirm_pass)
+            user.save()
+            logout(request)
+            return redirect("/myapp/login_get/")
+        else:
+            messages.warning(request,"password does not match")
+            return redirect("/myapp/labassist_changepassword_get/")
+    else:
+        messages.warning(request,"invalid password")
+        return redirect("/myapp/labassist_changepassword_get/")
 
 
 
@@ -809,28 +933,28 @@ def labassist_addsys_healthreport_post(request):
 
 #add system
 def labassist_addsystem_get(request):
-    data=Lab.objects.all()
-    return render(request, "labassistpage/add_system.html",{'data':data})
+    # data=Lab.objects.all()
+    return render(request, "labassistpage/add_system.html")
 
 
 def labassist_addsystem_post(request):
     systemno=request.POST['systemno']
     macaddress=request.POST['macaddress']
 
-    l=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+    # l=Laballocation.objects.get(LABASSIST__USER_id=request.user)
 
     a=System()
     a.systemno=systemno
     a.macaddress=macaddress
-    a.LAB_id=l.LAB.id
+    a.LABASSIST=Labassistant.objects.get(USER=request.user)
     a.save()
     return redirect('/myapp/labassist_viewsystem_get/')
 
 
 def labassist_editsystem_get(request,id):
     data= System.objects.get(id=id)
-    data2=Lab.objects.all()
-    return render(request, "labassistpage/edit_system.html",{'data':data,'data2':data2})
+    # data2=Lab.objects.all()
+    return render(request, "labassistpage/edit_system.html",{'data':data})
 
 
 def labassist_editsystem_post(request):
@@ -859,9 +983,9 @@ def labassist_viewsystem_get(request):
 
 
 def labassist_allocatesys_student_get(request):
-    s=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+    # s=Laballocation.objects.filter(LABASSIST__USER_id=request.user.id)
     student=Student.objects.all()
-    system=System.objects.filter(LAB=s.LAB.id)
+    system=System.objects.filter(LABASSIST__USER=request.user)
     return render(request,"labassistpage/labassist_allocate_sys_student.html",{'student':student,'system':system})
 
 def labassist_allocatesys_student_post(request):
@@ -890,8 +1014,8 @@ def labassist_view_profile_get(request):
     return render(request,"labassistpage/labassist_view_profile.html",{'data':data})
 
 def labassist_view_sys_allocation_get(request):
-    s=Laballocation.objects.get(LABASSIST__USER_id=request.user)
-    data=Systemallocation.objects.filter(SYSTEM__LAB=s.LAB.id)
+    # s=Laballocation.objects.get(LABASSIST__USER_id=request.user)
+    data=Systemallocation.objects.filter(SYSTEM__LABASSIST__USER_id=request.user)
     return render(request, "labassistpage/labassist_view_sys_allocation.html",{'data':data})
 
 def labassist_delete_sys_allocation_get(request,id):
@@ -944,6 +1068,14 @@ def labassist_view_scrnshot_get(request,id):
     data=Screenshots.objects.all()
     return  render(request,"labassistpage/labassist_view_screenshot.html",{'data':data})
 
+
+
+def Labassist_view_labreq(request):
+    data=Labrequest.objects.all()
+    return  render(request,"labassistpage/labassist_view_labrequest.html",{'data':data})
+
+
+
 #ending of labassist module
 
 
@@ -953,9 +1085,34 @@ def labassist_view_scrnshot_get(request,id):
 
 #staff module
 
+def staff_changepassword_get(request):
+    return render(request,"staffpage/staff_change_password.html")
+
+def staff_changepassword_post(request):
+    old_pass = request.POST['old_pass']
+    new_pass = request.POST['new_pass']
+    confirm_pass = request.POST['confirm_pass']
+
+    user= request.user
+    a = check_password(old_pass,request.user.password)
+    if a:
+        if new_pass==confirm_pass:
+            user=request.user
+            user.set_password(confirm_pass)
+            user.save()
+            logout(request)
+            return redirect("/myapp/login_get/")
+        else:
+            messages.warning(request,"password does not match")
+            return redirect("/myapp/staff_changepassword_get/")
+    else:
+        messages.warning(request,"invalid password")
+        return redirect("/myapp/staff_changepassword_get/")
+
 
 def staff_command_invoc_get(request):
-    return render(request, "staffpage/staff_command_invocation.html")
+    data=Command.objects.filter(STAFF__USER_id=request.user.id)
+    return render(request, "staffpage/staff_command_invocation.html",{'data':data})
 
 def staff_command_invoc_post(request):
     return
@@ -980,7 +1137,8 @@ def staff_systmonitor_post(request):
 
 
 def staff_viewstud_complaint_get(request):
-    return  render(request,"staffpage/staff_view_student_complaint.html")
+    data=Complaint.objects.all()
+    return  render(request,"staffpage/staff_view_student_complaint.html",{'data':data})
 
 def staff_view_profile_get(request):
     d=request.user
@@ -989,15 +1147,28 @@ def staff_view_profile_get(request):
 
 
 
-def staff_view_system_get(request):
-    return render(request,"staffpage/staff_view_system.html")
 
 
 def staff_view_alloc_sub_get(request):
-    d=request.user
+    d=request.user.id
+    print(d)
     data=Labsuballocation.objects.filter(STAFF__USER_id=d)
     return render(request,"staffpage/staff_view_allocated_subject.html",{'data':data})
 
+
+def staff_view_stud_sys_sub_allocation_get(request,crsid,sem):
+    s=Student.objects.filter(COURSE_id=crsid,sem=sem)
+    return render(request,"staffpage/staff_view_sys_stud_sub.html",{'data':s})
+
+
+def staff_view_system_get(request,id):
+    data = Systemallocation.objects.filter(STUDENT__COURSE_id=id)
+    return render(request,"staffpage/staff_view_system.html",{'data':data})
+
+
+def staff_view_sub_schedule_get(request):
+    data=Labsubjectschedule.objects.all()
+    return render(request,"staffpage/staff_view_labsub_schedule.html",{'data':data})
 
 
 def staff_view_filelogs_get(request):
@@ -1016,8 +1187,238 @@ def staff_view_scrnshot_get(request):
 
 
 def staff_view_attendance_get(request):
-    return render(request,"staffpage/staff_view_attendance.html")
+    data1=Labsubject.objects.all()
+    data=Attendance.objects.all()
+    return render(request,"staffpage/staff_view_attendance.html",{'data':data,'data1':data1})
 
 
+
+def photo_recognition(request):
+    photo=request.FILES['photo']
+    macaddress = request.POST['macaddress']
+    date = datetime.now().strftime('%Y%m%d%H%M%S') + '.jpg'
+    fs=FileSystemStorage()
+    fs.save(date, photo)
+    path = fs.url(date)
+
+
+    s=Systemallocation.objects.filter(SYSTEM=System.objects.get(macaddress=macaddress))
+
+    sid=[]
+    sname=[]
+    sFaceFeature=[]
+
+
+def ins_keylogs(request):
+    mac=request.POST['macaddress']
+    keys=request.POST['key']
+
+    a=Keylogs()
+    a.date=datetime.now().date()
+    a.time=datetime.now().time()
+    a.keys=keys
+    a.SYSTEM=System.objects.get(macaddress=mac)
+    a.save()
+
+    return JsonResponse(
+        {
+            'status':'ok'
+        }
+    )
+
+
+
+def ins_screesnhot(request):
+    screenshot=request.FILES['screenshot']
+    macaddress = request.POST['macaddress']
+    fs = FileSystemStorage()
+    fs.save(screenshot)
+    path = fs.url(screenshot)
+
+    a=Screenshots()
+    a.date = datetime.now().date()
+    a.time = datetime.now().time()
+    a.filename=path
+    a.status="done"
+    a.SYSTEM=System.objects.get(macaddress=macaddress)
+
+
+def ins_filelogs(request):
+    operation=request.POST['operation']
+    file=request.POST['filename']
+    macaddress = request.POST['macaddress']
+
+    a=Filelogs()
+    a.date=datetime.now().date()
+    a.time=datetime.now().time()
+    a.operation=operation
+    a.filename=file
+    a.SYSTEM=System.objects.get(macaddress=macaddress)
+    a.save()
+
+    return JsonResponse(
+        {
+            'status': 'ok'
+        }
+    )
+
+
+def ins_processlogs(request):
+    macaddress=request.POST['macaddress']
+    appname=request.POST['appname']
+
+    a=ProcessLogs()
+    a.date=datetime.now().date()
+    a.time=datetime.now().time()
+    a.appname=appname
+    a.SYSTEM=System.objects.get(macaddress=macaddress)
+
+    return JsonResponse(
+        {
+            'status': 'ok'
+        }
+    )
+
+
+
+
+def ins_helprequest(request):
+    macaddress=request.POST['macaddress']
+    sid=request.POST['sid']
+
+
+    s=System.objects.get(macaddress=macaddress)
+    a=Helprequest()
+    a.date=datetime.now().date()
+    a.time=datetime.now().time()
+    a.status='pending'
+    a.STUDENT_id=sid
+    a.SYSTEM_id=s.id
+    a.save()
+
+    return JsonResponse(
+        {
+            'status':'ok'
+        }
+    )
+
+
+
+
+def getblockedapps(request):
+
+    data=Blockedapps.objects.all()
+    li=[]
+    for i in data:
+        li.append(i.appname)
+
+    return  JsonResponse({'data':li})
+
+def get_screenshot_status(request):
+    macaddress=request.POST['macaddress']
+    s=Screenshots.objects.filter(status="pending",SYSTEM= System.objects.get(macaddress=macaddress))
+
+    if s.exists():
+        return  JsonResponse(
+            {
+                'status':'ok'
+            }
+        )
+    else:
+        return JsonResponse(
+            {
+                'status': 'no'
+            }
+        )
+
+
+
+
+def student_login(request):
+    username = request.POST['username']
+    password = request.POST['password']
+
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        login(request, user)
+        if user.groups.filter(name='student').exists():
+            return JsonResponse({"status": "ok"})
+        else:
+            messages.success(request, 'invalid user')
+            return JsonResponse({"status": "no"})
+    else:
+        return JsonResponse({"status":"no"})
+
+
+def student_view_labsub(request):
+    l=[]
+    data=Labsubject.objects.all()
+    for i in data:
+        l.append({'id':i.id,'subject':i.subject,'course':i.COURSE.coursename,'sem':i.sem})
+    return JsonResponse({"status":"ok","data":l})
+
+
+def student_view_system(request):
+    l=[]
+    data=Systemallocation.objects.all()
+    for i in data:
+        l.append({'id':i.id,'student':i.STUDENT.studentname,'status':i.status,'system':i.SYSTEM.systemno,'date':i.date})
+    return JsonResponse({"status":"ok"})
+
+
+
+def student_view_attendance(request):
+    lid=request.POST['lid']
+    l=[]
+    data=Attendance.objects.filter(STUDENT__USER=lid)
+    for i in data:
+        l.append({'id':i.id,'date':i.date,'time':i.time,'status':i.status,'student':i.STUDENT.studentname,'system':i.SYSTEM.systemno})
+    return JsonResponse({"status":"ok"})
+
+
+
+def student_view_replies(request):
+    lid=request.POST['lid']
+    l=[]
+    data=Complaint.objects.filter(STUDENT__USER=lid)
+    for i in data:
+        l.append({'id':i.id,'complaint':i.complaint,'status':i.status,'reply':i.reply,'date':i.date})
+    return JsonResponse({"status":"ok"})
+
+
+def student_sent_complaint(request):
+    lid = request.POST['lid']
+    complaint = request.POST['complaint']
+    obj = Complaint()
+    obj.complaint = complaint
+    obj.date = datetime.now().date()
+    obj.status = 'pending'
+    obj.reply = 'pending'
+    obj.STUDENT = Student.objects.get(LOGIN=lid)
+    obj.save()
+
+    return JsonResponse({"status": "ok"})
+
+
+def student_labreq(request):
+    lid=request.POST['lid']
+    labid=request.POST['labid']
+    obj=Labrequest()
+    obj.LAB_id=labid
+    obj.date=datetime.now().date()
+    obj.time=datetime.now().time()
+    obj.status='pending'
+    obj.STUDENT=Student.objects.get(LOGIN=lid)
+    obj.save()
+    return JsonResponse({"status":"ok"})
+
+
+def student_view_status_of_labreq(request):
+    lid=request.POST['lid']
+    l=[]
+    data=Labrequest.objects.filter(STUDENT__USER=lid)
+    for i in data:
+        l.append({'id':i.id,'date':i.date,'time':i.time,'status':i.status,'lab':i.LAB.labname})
+    return JsonResponse({"status":"ok"})
 
 

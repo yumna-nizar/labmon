@@ -10,8 +10,11 @@
 {#<body>#}
 <div class="container py-4">
     <!-- Top Controls -->
+
     <div class="d-flex justify-content-between align-items-center mb-4">
+         <h2 class="card-title mb-3">Lab Assistant View System</h2>
         <select class="form-select w-auto">
+
             <option selected>Choose Lab</option>
             <option value="1">Lab 1</option>
             <option value="2">Lab 2</option>
@@ -30,8 +33,8 @@
                     <p><strong>MAC:</strong>{{ i.macaddress }}</p>
                     <p><strong>Lab:</strong>{{ i.LAB.labno }}-{{ i.LAB.labname }}</p>
                     <div class="d-flex justify-content-end gap-2">
-                        <a href="/myapp/admin_editsystem_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <a href="/myapp/admin_deletesystem_get/{{ i.id }}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        <a href="/myapp/labassist_editsystem_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <a href="/myapp/labassist_deletesystem_get/{{ i.id }}" class="btn btn-sm btn-outline-danger">Delete</a>
                     </div>
                 </div>
             </div>
