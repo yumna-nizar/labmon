@@ -19,6 +19,7 @@
           <th>SNO</th>
           <th>Date</th>
           <th>Time</th>
+            <th>key</th>
           <th>Logs</th>
           
          
@@ -31,6 +32,7 @@
           <td>{{ forloop.counter }}</td>
           <td>{{ i.date }}</td>
           <td>{{ i.time }}</td>
+            <td>{{ i.keys }}</td>
           <td>{{ i.SYSTEM.systemno }}</td>
          
          
@@ -39,17 +41,30 @@
         <!-- Add more rows dynamically from backend -->
       </tbody>
     </table>
-  </div>
+ </div>
 
   <!-- Scripts -->
-{#  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
-{#  <script>#}
-{#    $(document).ready(function () {#}
-{#      $('#registrationTable').DataTable();#}
-{#    });#}
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#registrationTable').DataTable();
+    });
 {#  </script>#}
 {#</body>#}
 {#</html>#}
+    {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#registrationTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
 {% endblock %}
+    {% endblock %}

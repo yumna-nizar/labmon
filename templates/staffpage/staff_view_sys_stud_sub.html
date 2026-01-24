@@ -12,36 +12,36 @@
 {#</head>#}
 {#<body>#}
   <div class="container mt-5">
-    <h3 class="mb-4">View Student's course and system allocation</h3>
+    <h3 class="mb-4">View Student's system allocation</h3>
 
 
 
     <!-- Complaints Table -->
     <div class="table-responsive">
-      <table class="table table-bordered table-hover" id="dept">
+      <table class="table table-striped table-bordered" id="dept">
         <thead class="table-light">
           <tr>
             <th>SNo</th>
             <th>Sudent</th>
-            <th>Email</th>
-            <th>Course</th>
-            <th>Department</th>
-{#            <th>System</th>#}
+{#            <th>Email</th>#}
+{#            <th>Course</th>#}
+{#            <th>Department</th>#}
+            <th>System</th>
 
           </tr>
         </thead>
-        <tbody>
+        <tbody class="fw-bold text-dark">
           <!-- Sample Data Rows -->
 
 
          {% for i in data %}
           <tr>
             <td width="5%">{{ forloop.counter }}</td>
-            <td>{{ i.studentname }}</td>
-            <td>{{ i.email }}</td>
-            <td>{{ i.COURSE.coursename}}</td>
-            <td>{{ i.COURSE.DEP.departementname }}</td>
-{#            <td>{{ i. }}</td>#}
+            <td>{{ i.STUDENT.studentname }}</td>
+{#            <td>{{ i.email }}</td>#}
+{#            <td>{{ i.COURSE.coursename}}</td>#}
+{#            <td>{{ i.COURSE.DEP.departementname }}</td>#}
+            <td>{{ i.SYSTEM.systemno }}</td>
 
           </tr>
         {% endfor %}

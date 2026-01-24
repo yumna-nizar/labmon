@@ -12,13 +12,13 @@
 {#</head>#}
 {#<body>#}
   <div class="container mt-5">
-    <h4 class="mb-4">Staff Send Reply</h4>
-    <form action="/myapp/staff_sentreply_post/" method="post">
+    <h4 class="mb-4">Staff add command</h4>
+    <form action="/myapp/staff_command_invoc_post/" method="post">
         {% csrf_token %}
-<input type="hidden" value="{{ id }}" name="id">
+<input type="hidden" value="{{ data.id }}" name="sys_id">
       <div class="mb-3">
-        <label for="reviewText" class="form-label">Reply</label>
-        <textarea class="form-control" name="reply" id="reviewText" rows="4" placeholder="Write your review here..." required></textarea>
+        <label for="reviewText" class="form-label">command</label>
+        <input class="form-control" name="command" id="reviewText" rows="4" placeholder="Write your command here..." required>
       </div>
 
       <!-- Submit Button -->

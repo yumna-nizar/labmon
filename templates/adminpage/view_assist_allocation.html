@@ -18,7 +18,7 @@
 
     <!-- Complaints Table -->
     <div class="table-responsive">
-      <table class="table table-bordered table-hover" id="complaintTable">
+      <table class="table table-bordered table-hover" id="assistallocation">
         <thead class="table-light">
           <tr>
             <th>SNo</th>
@@ -60,39 +60,17 @@
     </div>
   </div>
 
-{#  <!-- Scripts -->#}
-{#  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
-{##}
-{#  <script>#}
-{#    // Extend DataTables with custom date filtering#}
-{#    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {#}
-{#      const min = document.getElementById('fromDate').value;#}
-{#      const max = document.getElementById('toDate').value;#}
-{#      const dateStr = data[1]; // Date is column index 1#}
-{#      const date = new Date(dateStr);#}
-{##}
-{#      const minDate = min ? new Date(min) : null;#}
-{#      const maxDate = max ? new Date(max) : null;#}
-{##}
-{#      if ((!minDate || date >= minDate) && (!maxDate || date <= maxDate)) {#}
-{#        return true;#}
-{#      }#}
-{#      return false;#}
-{#    });#}
-{##}
-{#    // Initialize DataTable and bind filter events#}
-{#    $(document).ready(function () {#}
-{#      const table = $('#complaintTable').DataTable({#}
-{#        pageLength: 5#}
-{#      });#}
-{##}
-{#      $('#fromDate, #toDate').on('change', function () {#}
-{#        table.draw();#}
-{#      });#}
-{#    });#}
-{#  </script>#}
-{#</body>#}
-{#</html>#}
+    {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#assistallocation').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}

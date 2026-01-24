@@ -19,6 +19,9 @@
     <h2 class="mb-4 text-center">Add Student</h2>
     <form action="/myapp/admin_addstudent_post/" method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    {% for i in messages %}
+        <p>{{ i }}</p>
+    {% endfor %}
         <div class="row mb-3">
             <label for="name" class="col-sm-2 ">Full Name</label>
             <div class="col-sm-5">

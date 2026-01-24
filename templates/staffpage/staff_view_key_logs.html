@@ -17,6 +17,7 @@
       <thead>
         <tr>
           <th>SNO</th>
+          <th>key</th>
           <th>Date</th>
           <th>Time</th>
           <th>Logs</th>
@@ -24,11 +25,12 @@
          
         </tr>
       </thead>
-      <tbody>
+      <tbody class="fw-bold text-dark">
         <!-- Sample Data Row -->
        {% for i in data %}
         <tr>
           <td>{{ forloop.counter }}</td>
+          <td>{{ i.keys }}</td>
           <td>{{ i.date }}</td>
           <td>{{ i.time }}</td>
           <td>{{ i.SYSTEM.systemno }}</td>

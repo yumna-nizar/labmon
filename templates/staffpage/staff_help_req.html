@@ -36,24 +36,24 @@
                         <th>Time</th>
                         <th>System</th>
                         <th>Student</th>
-
-
-
-                        <th>Action</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="fw-bold text-dark">
                     <!-- Sample Data Rows -->
                     {% for i in data %}
                     <tr>
                         <td width="5%">{{ forloop.counter }}</td>
                         <td>{{ i.date }}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ i.time }}</td>
+                        <td>{{ i.SYSTEM.systemno }}</td>
+                        <td>{{ i.STUDENT.studentname }}</td>
                         <td width="15%">
-                            <a class="btn btn-sm btn-primary">Accept</a>
-                            
+                            {% if i.status == 'pending' %}
+                            <a href="/myapp/staff_resolve_helpreq/{{ i.id }}" class="btn btn-sm btn-primary">Resolve</a>
+                            {% else %}
+                                {{ i.status }}
+                            {% endif %}
 
 
                         </td>

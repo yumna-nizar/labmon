@@ -1,4 +1,4 @@
-{% extends 'labassistpage/labassist_index.html' %}
+{% extends 'adminpage/admin_index.html' %}
 {% block body %}
 {#<!DOCTYPE html>#}
 {#<html lang="en">#}
@@ -14,7 +14,7 @@
 {##}
 {#<body>#}
     <div class="container mt-5">
-        <h3 class="mb-4">Lab Assistant View System Health</h3>
+        <h3 class="mb-4">Admin View System Health</h3>
         <div class="container">
 
 
@@ -59,7 +59,7 @@
     </div>
 
 
- {% block scripts %}
+    {% block scripts %}
 <script>
     $(document).ready(function () {
         $('#complaintTable').DataTable({

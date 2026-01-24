@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/myapp/urls.py" line="268" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="91930d47-4c54-4a6b-a6d5-f7d7e7d9a0bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_command_invocation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/Staff_index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/staff_change_password.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_student.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/myapp/migrations/0001_initial.py" afterPath="" />
+    <list default="true" id="91930d47-4c54-4a6b-a6d5-f7d7e7d9a0bb" name="Default" comment="s">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_system_monitor.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_file_logs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_process_logs.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_screenshot.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_student_complaint.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_sys_health_reports.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/admin_view_system.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/adminpage/view_blockedapps.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_edit_allocate_sys_student.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/staffpage/staff_add_command.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lab_mon/settings.py" afterPath="$PROJECT_DIR$/lab_mon/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/models.py" afterPath="$PROJECT_DIR$/myapp/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/urls.py" afterPath="$PROJECT_DIR$/myapp/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myapp/views.py" afterPath="$PROJECT_DIR$/myapp/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/add_labsub_schedule.html" afterPath="$PROJECT_DIR$/templates/adminpage/add_labsub_schedule.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/add_staff.html" afterPath="$PROJECT_DIR$/templates/adminpage/add_staff.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/add_student.html" afterPath="$PROJECT_DIR$/templates/adminpage/add_student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/admin_change_password.html" afterPath="$PROJECT_DIR$/templates/adminpage/admin_change_password.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/admin_index.html" afterPath="$PROJECT_DIR$/templates/adminpage/admin_index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/blocked_apps.html" afterPath="$PROJECT_DIR$/templates/adminpage/blocked_apps.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/edit_student.html" afterPath="$PROJECT_DIR$/templates/adminpage/edit_student.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_assist_allocation.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_assist_allocation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_attendance_report.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_attendance_report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_course.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_course.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_department.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_department.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_lab.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_lab.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_labassist.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_labassist.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_labsub.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_labsub.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/add_system.html" afterPath="$PROJECT_DIR$/templates/labassistpage/add_system.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/edit_system.html" afterPath="$PROJECT_DIR$/templates/labassistpage/edit_system.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_add_sys_health_rep.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_add_sys_health_rep.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_allocate_sys_student.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_allocate_sys_student.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_staff.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_staff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_staff_sub_allocation.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_staff_sub_allocation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/adminpage/view_student.html" afterPath="$PROJECT_DIR$/templates/adminpage/view_student.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_index.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_allocated_labs.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_allocated_labs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_allocation.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_allocation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_health_reports.html" afterPath="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_health_reports.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/labassistpage/view_system.html" afterPath="$PROJECT_DIR$/templates/labassistpage/view_system.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/Staff_index.html" afterPath="$PROJECT_DIR$/templates/staffpage/Staff_index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_change_password.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_change_password.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_help_req.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_help_req.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_sent_replies.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_sent_replies.html" />
@@ -44,10 +57,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_file_logs.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_file_logs.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_key_logs.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_key_logs.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_process_logs.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_process_logs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_profile.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_screenshot.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_screenshot.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_student.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_student.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/staffpage/staff_view_system.html" afterPath="$PROJECT_DIR$/templates/staffpage/staff_view_system.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,41 +90,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myapp/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21525">
+              <caret line="874" column="22" lean-forward="false" selection-start-line="874" selection-start-column="4" selection-end-line="874" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-725">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="14" />
+            <state relative-caret-position="975">
+              <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
               <folding>
-                <marker date="1764221286004" expanded="true" signature="895:1327" ph="..." />
-                <marker date="1764221286004" expanded="true" signature="1435:1977" ph="..." />
+                <marker date="1768391001630" expanded="true" signature="895:1327" ph="..." />
+                <marker date="1768391001630" expanded="true" signature="1435:1977" ph="..." />
+                <marker date="1768391001630" expanded="true" signature="4667:4907" ph="..." />
+                <marker date="1768391001630" expanded="true" signature="5005:5206" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_labsub.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/adminpage/view_labsub.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="staff_view_sys_stud_sub.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myapp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
-              <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+              <caret line="155" column="33" lean-forward="false" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staff_view_student.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_student.html">
+      <file leaf-file-name="blocked_apps.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/adminpage/blocked_apps.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1125">
+              <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staff_command_invocation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="staff_system_monitor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_system_monitor.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1575">
               <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
@@ -118,61 +155,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_labsub.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/adminpage/add_labsub.html">
+      <file leaf-file-name="labassist_view_screenshot.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="400">
+              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_index.html">
+      <file leaf-file-name="labassist_system_monitor.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5525">
-              <caret line="221" column="34" lean-forward="false" selection-start-line="221" selection-start-column="34" selection-end-line="221" selection-end-column="34" />
+            <state relative-caret-position="1350">
+              <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_student.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/adminpage/add_student.html">
+      <file leaf-file-name="staff_add_command.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_add_command.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2325">
-              <caret line="93" column="62" lean-forward="false" selection-start-line="93" selection-start-column="62" selection-end-line="93" selection-end-column="62" />
+            <state relative-caret-position="275">
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staff_view_labsub_schedule.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html">
+      <file leaf-file-name="labassist_add_command.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_add_command.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_staff.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/adminpage/add_staff.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2325">
-              <caret line="93" column="33" lean-forward="false" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myapp/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
-              <caret line="1420" column="28" lean-forward="false" selection-start-line="1420" selection-start-column="28" selection-end-line="1420" selection-end-column="28" />
+            <state relative-caret-position="350">
+              <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -189,36 +206,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>staff_index</find>
-      <find>admin_viewstaff_get</find>
-      <find>admin_addstaff_post</find>
-      <find>addstaff</find>
-      <find>staff_view</find>
-      <find>Staff_view_sy</find>
-      <find>sent</find>
-      <find>hel</find>
-      <find>admin_viewst</find>
-      <find>admin_addstudent_post</find>
-      <find>add_stude</find>
+      <find>labassist_viewsystem_get</find>
+      <find>admin_view_fil</find>
+      <find>admin_viewattendance_report_get</find>
+      <find>attendance</find>
+      <find>staff_view_st</find>
+      <find>admin_viewstud_complaint_get</find>
+      <find>complaint</find>
+      <find>health</find>
+      <find>admin_view_sys_healthreport_get</find>
+      <find>staff_changepassword_get</find>
+      <find>staff_changepassword_</find>
+      <find>labassist_changepassword_get</find>
+      <find>labassist_changepassword_</find>
+      <find>labassist_syst_monitor_get</find>
+      <find>labassist_editsystem_get</find>
+      <find>admin_viewsystem_get_</find>
+      <find>admin_system_monitor_get</find>
+      <find>admin_viewsystem_get</find>
+      <find>staff_view_atte</find>
       <find>staff_view_alloc_sub_get</find>
-      <find>staff_view_system_get</find>
-      <find>admin_addlabsub_post</find>
-      <find>files</find>
-      <find>blo</find>
-      <find>bloc</find>
-      <find>remoi</find>
-      <find>remo</find>
-      <find>he</find>
-      <find>key</find>
-      <find>help</find>
-      <find>compl</find>
-      <find>depa</find>
-      <find>admin_addst</find>
-      <find>new</find>
-      <find>staff_view_labs</find>
-      <find>addstu</find>
-      <find>admin_views</find>
-      <find>admin_viewlabsub</find>
+      <find>staff_view_attendance_get</find>
+      <find>edit</find>
+      <find>staff_view_pr</find>
+      <find>staff_comm</find>
+      <find>verify_person</find>
+      <find>staff_command_invoc_get</find>
+      <find>window_get</find>
+      <find>labassist</find>
+      <find>labassist_co</find>
+      <find>admin_blo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,57 +252,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/labassistpage/add_system.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/edit_system.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_add_sys_health_rep.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_health_reports.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_command_invocation.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html" />
-        <option value="$PROJECT_DIR$/myapp/migrations/0009_auto_20251013_1657.py" />
-        <option value="$PROJECT_DIR$/myapp/migrations/0010_auto_20251016_1722.py" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_allocate_sys_student.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_file_logs.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_key_logs.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_process_logs.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/view_system.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_system_monitor.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_sent_replies.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_student.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/view_student.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/add_student.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_allocated_subject.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_system.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/add_labsub.html" />
-        <option value="$PROJECT_DIR$/myapp/migrations/0004_auto_20251117_1510.py" />
-        <option value="$PROJECT_DIR$/myapp/migrations/0003_auto_20251113_1650.py" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_profile.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_help_req.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_screenshot.html" />
         <option value="$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html" />
-        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_allocated_labs.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_screenshot.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_help_req.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/add_student.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/edit_student.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_staff.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_labassist.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_system.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_department.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_file_logs.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_process_logs.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_screenshot.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_student.html" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_key_logs.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_attendance.html" />
         <option value="$PROJECT_DIR$/templates/staffpage/staff_change_password.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/admin_change_password.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/add_lab.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/blocked_apps.html" />
-        <option value="$PROJECT_DIR$/myapp/migrations/0004_auto_20251119_1637.py" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_index.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_staff_sub_allocation.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/edit_labsub.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_labsub.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_lab.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_course.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_assist_allocation.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_system.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_sys_health_reports.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/view_attendance_report.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/admin_view_student_complaint.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/view_system.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_health_reports.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_allocation.html" />
         <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html" />
         <option value="$PROJECT_DIR$/templates/labassistpage/labassist_index.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/add_staff.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/add_labsub_schedule.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html" />
         <option value="$PROJECT_DIR$/templates/staffpage/Staff_index.html" />
-        <option value="$PROJECT_DIR$/myapp/urls.py" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html" />
-        <option value="$PROJECT_DIR$/templates/adminpage/admin_index.html" />
-        <option value="$PROJECT_DIR$/myapp/models.py" />
-        <option value="$PROJECT_DIR$/templates/adminpage/view_labsub.html" />
-        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_allocated_subject.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html" />
+        <option value="$PROJECT_DIR$/templates/staffpage/staff_system_monitor.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html" />
+        <option value="$PROJECT_DIR$/templates/labassistpage/labassist_add_command.html" />
+        <option value="$PROJECT_DIR$/templates/adminpage/blocked_apps.html" />
         <option value="$PROJECT_DIR$/myapp/views.py" />
+        <option value="$PROJECT_DIR$/myapp/urls.py" />
       </list>
     </option>
   </component>
@@ -296,10 +313,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1942" />
-    <option name="height" value="1030" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1006" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -453,24 +470,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="myapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab_mon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lab_mon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lab_mon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -482,7 +481,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Python310/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../student_labmon-main/student_labmon" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="terminal&#9;ACTION&#9;ActivateTerminalToolWindow" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
@@ -494,10 +493,10 @@
       <recent name="C:\Users\user\Downloads\lab_mon\templates\labassistpage" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\user\Downloads\lab_mon\templates\staffpage" />
       <recent name="C:\Users\user\Downloads\lab_mon\templates\labassistpage" />
-      <recent name="C:\Users\user\Downloads\lab_mon\myapp\static" />
       <recent name="C:\Users\user\Downloads\lab_mon\templates\adminpage" />
+      <recent name="C:\Users\user\Downloads\lab_mon\templates\staffpage" />
+      <recent name="C:\Users\user\Downloads\lab_mon\myapp\static" />
       <recent name="C:\Users\user\Downloads\lab_mon\myapp" />
     </key>
   </component>
@@ -700,9 +699,9 @@
       <module name="lab_mon" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
-      <option name="host" value="" />
+      <option name="host" value="0.0.0.0" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
+      <option name="browserUrl" value="http://localhost:8000/myapp/login_get/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -769,7 +768,14 @@
       <option name="project" value="LOCAL" />
       <updated>1763119626601</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="sixth">
+      <created>1764590736865</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1764590736865</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -782,18 +788,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1030" extended-state="0" />
+    <frame x="1" y="1" width="1918" height="1006" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22540541" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36473164" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293124" sideWeight="0.50216216" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293124" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29813665" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2557298" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31801242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -802,8 +808,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -814,14 +821,15 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293124" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2560096" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22162162" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29813665" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31801242" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33296824" sideWeight="0.5" order="0" side_tool="true" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -837,106 +845,223 @@
     <MESSAGE value="third" />
     <MESSAGE value="fourth" />
     <MESSAGE value="5" />
-    <MESSAGE value="sixth" />
     <MESSAGE value="seventh" />
-    <option name="LAST_COMMIT_MESSAGE" value="seventh" />
+    <MESSAGE value="sixth" />
+    <option name="LAST_COMMIT_MESSAGE" value="sixth" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/myapp/views.py</url>
+          <line>1361</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/myapp/views.py</url>
+          <line>1407</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myapp/migrations/0003_auto_20251113_1650.py" />
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_profile.html">
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="29" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="316">
+          <caret line="352" column="7" lean-forward="false" selection-start-line="352" selection-start-column="7" selection-end-line="352" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_sent_replies.html">
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_system_monitor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="500">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_profile.html">
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_process_logs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="-869">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_help_req.html">
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_key_logs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="55" lean-forward="false" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_system.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="21" lean-forward="true" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_file_logs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_system_monitor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1900">
-          <caret line="76" column="11" lean-forward="false" selection-start-line="76" selection-start-column="11" selection-end-line="76" selection-end-column="11" />
+        <state relative-caret-position="328">
+          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_screenshot.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="125">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html">
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_attendance.html" />
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_student.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1525">
-          <caret line="61" column="29" lean-forward="false" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        <state relative-caret-position="2075">
+          <caret line="83" column="100" lean-forward="false" selection-start-line="83" selection-start-column="100" selection-end-line="83" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_student_complaint.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_change_password.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_staff_sub_allocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="47" column="106" lean-forward="false" selection-start-line="47" selection-start-column="106" selection-end-line="47" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/edit_course.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-730">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/edit_labsub.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="39" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_course.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="52" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_labsub.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="55" column="1" lean-forward="false" selection-start-line="55" selection-start-column="1" selection-end-line="67" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_assist_allocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="74" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_sys_health_reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_system.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="85" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_view_student_complaint.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="14" lean-forward="false" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_attendance_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="62" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="359" column="12" lean-forward="false" selection-start-line="359" selection-start-column="12" selection-end-line="359" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_key_logs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="56" column="2" lean-forward="false" selection-start-line="56" selection-start-column="2" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_process_logs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1450">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_system.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/view_system.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2125">
+          <caret line="85" column="26" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="91" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16775">
+          <caret line="671" column="3" lean-forward="false" selection-start-line="671" selection-start-column="3" selection-end-line="676" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/Staff_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="670" column="43" lean-forward="false" selection-start-line="670" selection-start-column="43" selection-end-line="670" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_change_password.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="-113">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -947,221 +1072,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_change_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_allocate_sys_student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="20" column="82" lean-forward="false" selection-start-line="20" selection-start-column="82" selection-end-line="20" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_lab.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/migrations/0003_complaint.py" />
-    <entry file="file://$PROJECT_DIR$/myapp/migrations/0002_auto_20251117_1526.py" />
-    <entry file="file://$PROJECT_DIR$/myapp/migrations/0004_auto_20251119_1637.py" />
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/view_labrequest.html" />
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_file_logs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="87" column="69" lean-forward="false" selection-start-line="87" selection-start-column="69" selection-end-line="87" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="80" column="22" lean-forward="false" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_department.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_process_logs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/blocked_apps.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_allocated_subject.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="31" column="32" lean-forward="false" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state relative-caret-position="1275">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/apps.py">
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_attendance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="2350">
+          <caret line="94" column="14" lean-forward="false" selection-start-line="94" selection-start-column="14" selection-end-line="94" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/admin.py">
+    <entry file="file://$PROJECT_DIR$/lab_mon/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/edit_assist_allocation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_labrequest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="36" column="26" lean-forward="false" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_labsub_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2450">
-          <caret line="98" column="48" lean-forward="false" selection-start-line="98" selection-start-column="48" selection-end-line="98" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/Staff_index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="69" column="75" lean-forward="false" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6575">
-          <caret line="266" column="73" lean-forward="false" selection-start-line="266" selection-start-column="73" selection-end-line="266" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_staff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="93" column="33" lean-forward="false" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
+        <state relative-caret-position="750">
+          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_labsub_schedule.html">
+    <entry file="file://$PROJECT_DIR$/media/20260120-180601face.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/20260120-180610face.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/20260120-180648face.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/20260120-180620face.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/20251007155359.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_lab.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="1475">
+          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_health_reports.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1525">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="73" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_sys_allocation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="63" column="1" lean-forward="false" selection-start-line="63" selection-start-column="1" selection-end-line="75" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_view_screenshot.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/admin_index.html">
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_command_invocation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5525">
-          <caret line="221" column="34" lean-forward="false" selection-start-line="221" selection-start-column="34" selection-end-line="221" selection-end-column="34" />
+        <state relative-caret-position="600">
+          <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="93" column="62" lean-forward="false" selection-start-line="93" selection-start-column="62" selection-end-line="93" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_labsub_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/add_labsub.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/adminpage/view_labsub.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_sys_stud_sub.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="42" lean-forward="false" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_view_student.html">
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_system_monitor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
@@ -1169,22 +1164,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myapp/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_system_monitor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="1420" column="28" lean-forward="false" selection-start-line="1420" selection-start-column="28" selection-end-line="1420" selection-end-column="28" />
+        <state relative-caret-position="1350">
+          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/staffpage/staff_add_command.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/labassistpage/labassist_add_command.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-725">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="975">
+          <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
           <folding>
-            <marker date="1764221286004" expanded="true" signature="895:1327" ph="..." />
-            <marker date="1764221286004" expanded="true" signature="1435:1977" ph="..." />
+            <marker date="1768391001630" expanded="true" signature="895:1327" ph="..." />
+            <marker date="1768391001630" expanded="true" signature="1435:1977" ph="..." />
+            <marker date="1768391001630" expanded="true" signature="4667:4907" ph="..." />
+            <marker date="1768391001630" expanded="true" signature="5005:5206" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/adminpage/blocked_apps.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21525">
+          <caret line="874" column="22" lean-forward="false" selection-start-line="874" selection-start-column="4" selection-end-line="874" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="155" column="33" lean-forward="false" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

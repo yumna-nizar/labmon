@@ -126,6 +126,8 @@ class ProcessLogs(models.Model):
     time=models.TimeField()
     appname=  models.CharField(max_length=50)
     SYSTEM =models.ForeignKey(System,on_delete=models.CASCADE)
+    STUDENT = models.ForeignKey(Student,on_delete=models.CASCADE)
+
 
 
 class Filelogs(models.Model):
@@ -134,6 +136,7 @@ class Filelogs(models.Model):
     date= models.CharField(max_length=50)
     filename= models.CharField(max_length=50)
     SYSTEM =models.ForeignKey(System,on_delete=models.CASCADE)
+    STUDENT = models.ForeignKey(Student, on_delete=models.CASCADE)
 
 
 class Keylogs(models.Model):
@@ -141,6 +144,8 @@ class Keylogs(models.Model):
     time= models.CharField(max_length=50)
     keys=models.CharField(max_length=500,default='')
     SYSTEM =models.ForeignKey(System,on_delete=models.CASCADE)
+    STUDENT = models.ForeignKey(Student, on_delete=models.CASCADE)
+
 
 
 class Screenshots(models.Model):
@@ -169,6 +174,7 @@ class Attendance(models.Model):
     date = models.CharField(max_length=50)
     time =models.CharField(max_length=50)
     status= models.CharField(max_length=50)
+    hour= models.CharField(max_length=50)
     STUDENT = models.ForeignKey(Student, on_delete=models.CASCADE)
     SYSTEM = models.ForeignKey(System, on_delete=models.CASCADE)
 
@@ -179,6 +185,7 @@ class Command(models.Model):
     status = models.CharField(max_length=50)
     command=models.CharField(max_length=500)
     STAFF =models.ForeignKey(Staff,on_delete=models.CASCADE)
+    SYSTEM =models.ForeignKey(System,on_delete=models.CASCADE)
 
 class Labrequest(models.Model):
     date= models.CharField(max_length=50)

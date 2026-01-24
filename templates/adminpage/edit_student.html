@@ -98,6 +98,12 @@
                 <input type="file" class="form-control" id="photo" accept="image/*" name="photo" >
             </div>
         </div>
+    <div class="row mb-3">
+            <label for="pincode" class="col-sm-2 ">Sem</label>
+            <div class="col-sm-5">
+                <input type="text" pattern="[1-8]{1}" class="form-control" value="{{ data.sem }}" id="pincode"  name="sem" required>
+            </div>
+        </div>
 
         <div class="row mb-3">
             <label for="course" class="col-sm-2 ">Course</label>

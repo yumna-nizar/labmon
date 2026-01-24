@@ -14,9 +14,17 @@
 {##}
 {#<body>#}
     <div class="container mt-5">
-        <h3 class="mb-4">Staff command invocation</h3>
-        <div class="container">
 
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0">Staff View - Command</h4>
+{#      <a href="/myapp/staff_add_command_get/{{ s.id }}" class="btn btn-primary">Add command</a>#}
+    </div>
+
+
+        <div class="container">
+<form method="post" action="/myapp/staff_command_invoc_post/">
+    {% csrf_token %}
+    <input type="hidden" value="{{ s.id }}" name="id">
             <div class="row mb-3">
                 <label for="command" class="col-sm-1">Command</label>
                 <div class="col-sm-2">
@@ -29,6 +37,7 @@
                     <button type="submit" class="btn btn-primary">execute</button>
                 </div>
             </div>
+    </form>
         </div>
 
 
@@ -40,21 +49,23 @@
                         <th>SNo</th>
                         <th>Date</th>
                         <th>Time</th>
+                        <th>command</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="fw-bold text-dark">
                     <!-- Sample Data Rows -->
                     {% for i in data %}
                     <tr>
                         <td width="5%">{{ forloop.counter }}</td>
                         <td>{{ i.date }}</td>
                         <td>{{ i.time }}</td>
+                        <td>{{ i.command }}</td>
                         <td>{{ i.status }}</td>
                         <td width="15%">
-                            <a class="btn btn-sm btn-primary">Edit</a>
-                            <a class="btn btn-sm btn-danger">Delete</a>
+{#                            <a class="btn btn-sm btn-primary">Edit</a>#}
+                            <a href="/myapp/staff_delete_command/{{ i.id }}" class="btn btn-sm btn-danger">Delete</a>
 
 
                         </td>

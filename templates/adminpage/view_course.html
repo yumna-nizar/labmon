@@ -1,97 +1,54 @@
 {% extends 'adminpage/admin_index.html' %}
 {% block body %}
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#  <meta charset="UTF-8">#}
-{#  <title>view Course</title>#}
-{#  <!-- Bootstrap 5 CSS -->#}
-{#  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
-{#  <!-- DataTables CSS -->#}
-{#  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">#}
-{#</head>#}
-{#<body>#}
-  <div class="container mt-5">
+
+<!-- DataTables CSS -->
+
+<div class="container mt-5">
     <h3 class="mb-4">View Course</h3>
 
-
-
-    <!-- Complaints Table -->
     <div class="table-responsive">
-      <table class="table table-bordered table-hover" id="complaintTable">
-        <thead class="table-light">
-          <tr>
-            <th>SNo</th>
-            <th>Department</th>
-              <th>Course</th>
-              <th>Total Sem</th>
-
-
-
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Sample Data Rows -->
-
-          {% for i in data %}
-          <tr>
-            <td width="5%">{{ forloop.counter }}</td>
-            <td>{{ i.DEP.departementname }}</td>
-              <td>{{ i.coursename }}</td>
-              <td>{{ i.totelsem }}</td>
-
-
-
-            <td width="15%">
-                <a href="/myapp/admin_editcourse_get/{{ i.id }}" class="btn btn-sm btn-primary">Edit</a>
-                <a  href="/myapp/admin_delete_course/{{ i.id }}" class="btn btn-sm btn-danger">Delete</a>
-
-
-            </td>
-          </tr>
-
-          {% endfor %}
-
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
+        <table class="table table-bordered table-hover" id="dept">
+            <thead class="table-light">
+                <tr>
+                    <th>SNo</th>
+                    <th>Department</th>
+                    <th>Course</th>
+                    <th>Total Sem</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td width="5%">{{ forloop.counter }}</td>
+                    <td>{{ i.DEP.departementname }}</td>
+                    <td>{{ i.coursename }}</td>
+                    <td>{{ i.totelsem }}</td>
+                    <td width="15%">
+                        <a href="/myapp/admin_editcourse_get/{{ i.id }}" class="btn btn-sm btn-success">Edit</a>
+                        <a href="/myapp/admin_delete_course/{{ i.id }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
-  </div>
+</div>
 
-  <!-- Scripts -->
-{#  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
-{#  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
-{##}
-{#  <script>#}
-{#    // Extend DataTables with custom date filtering#}
-{#    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {#}
-{#      const min = document.getElementById('fromDate').value;#}
-{#      const max = document.getElementById('toDate').value;#}
-{#      const dateStr = data[1]; // Date is column index 1#}
-{#      const date = new Date(dateStr);#}
-{##}
-{#      const minDate = min ? new Date(min) : null;#}
-{#      const maxDate = max ? new Date(max) : null;#}
-{##}
-{#      if ((!minDate || date >= minDate) && (!maxDate || date <= maxDate)) {#}
-{#        return true;#}
-{#      }#}
-{#      return false;#}
-{#    });#}
-{##}
-{#    // Initialize DataTable and bind filter events#}
-{#    $(document).ready(function () {#}
-{#      const table = $('#complaintTable').DataTable({#}
-{#        pageLength: 5#}
-{#      });#}
-{##}
-{#      $('#fromDate, #toDate').on('change', function () {#}
-{#        table.draw();#}
-{#      });#}
-{#    });#}
-{#  </script>#}
-{#</body>#}
-{#</html>#}
+<!-- jQuery -->
+
+<!-- DataTable Init -->
+    {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#dept').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}
