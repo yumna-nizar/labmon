@@ -882,7 +882,20 @@ def delete_blockedapps(request,id):
 def admin_viewattendance_report_get(request):
     data1 = Labsubject.objects.all()
     data = Attendance.objects.all()
-    return render(request, "adminpage/view_attendance_report.html", {'data': data, 'data1': data1})
+    data2 =Course.objects.all()
+    data3= Departement.objects.all()
+    return render(request, "adminpage/view_attendance_report.html", {'data': data, 'data1': data1, 'course':data2, 'department':data3})
+
+def admin_viewattendance_report_post(request):
+    dep=request.POST['dep']
+    course=request.POST['course']
+    sem=request.POST['sem']
+    data1 = Labsubject.objects.all()
+    data = Attendance.objects.filter(STUDENT__COURSE__DEP=dep,STUDENT__COURSE=course,STUDENT__sem=sem)
+    data2 = Course.objects.all()
+    data3 = Departement.objects.all()
+    return render(request, "adminpage/view_attendance_report.html",{'data': data, 'data1': data1, 'course': data2, 'department': data3})
+
 
 def admin_viewstud_complaint_get(request):
     data=Complaint.objects.all()

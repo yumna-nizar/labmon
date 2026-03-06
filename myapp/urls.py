@@ -157,6 +157,7 @@ urlpatterns = [
 
 
     path('admin_viewattendance_report_get/',views.admin_viewattendance_report_get),
+    path('admin_viewattendance_report_post/',views.admin_viewattendance_report_post),
     path('admin_viewstud_complaint_get/',views.admin_viewstud_complaint_get),
 
 

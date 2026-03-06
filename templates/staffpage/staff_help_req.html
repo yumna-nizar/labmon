@@ -14,7 +14,7 @@
 {##}
 {#<body>#}
     <div class="container mt-5">
-        <h3 class="mb-4">Staff View Help Request</h3>
+        <h3 class="mb-4"> View Help Request</h3>
         <div class="container">
 
            
@@ -102,4 +102,17 @@
 {#</body>#}
 {##}
 {#</html>#}
+    {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#complaintTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}

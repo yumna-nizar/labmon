@@ -30,8 +30,24 @@
          {% for i in data %}
         <tr>
           <td>{{ forloop.counter }}</td>
-          <td>{{ i.date }}</td>
-          <td>{{ i.time }}</td>
+          <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:":10" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
+          <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:"11:19" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
           <td>{{ i.filename }}</td>
           <td>{{ i.SYSTEM.systemno }}</td>
           <td>{{ i.operation }}</td>
@@ -45,14 +61,27 @@
   </div>
 
   <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('#registrationTable').DataTable();
-    });
+{#  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
+{#  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
+{#  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
+{#  <script>#}
+{#    $(document).ready(function () {#}
+{#      $('#registrationTable').DataTable();#}
+{#    });#}
 {#  </script>#}
 {#</body>#}
 {#</html>#}
+  {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#registrationTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
     {% endblock %}

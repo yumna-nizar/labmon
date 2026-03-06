@@ -30,7 +30,15 @@
         {% for i in data %}
         <tr>
           <td>{{ forloop.counter }}</td>
-          <td>{{ i.date }}</td>
+          <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:"11:19" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
           <td>{{ i.time }}</td>
             <td>{{ i.keys }}</td>
           <td>{{ i.SYSTEM.systemno }}</td>

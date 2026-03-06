@@ -12,22 +12,21 @@
 {#</head>#}
 {#<body>#}
 <div class="container mt-5">
-    <h3 class="mb-4">Staff View Complaint From Student</h3>
+    <h3 class="mb-4">View Complaint From Student</h3>
     <div class="container">
 
         <div class="row mb-3">
-            <label for="fromdate" class="col-sm-2 ">From date</label>
+           <label class="col-sm-1">From date</label>
             <div class="col-sm-2">
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" id="fromDate">
             </div>
 
-
-            <label for="todate" class="col-sm-1 ">To date</label>
+            <label class="col-sm-1">To date</label>
             <div class="col-sm-2">
-               <input type="date"  class="form-control">
+                <input type="date" class="form-control" id="toDate">
             </div>
-            <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Go</button>
+             <div class="col-sm-2">
+                <button type="button" class="btn btn-primary w-100">Go</button>
             </div>
         </div>
     </div>
@@ -71,9 +70,9 @@
 </div>
 
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+{#<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
+{#<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
+{#<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
 
 {#<script>#}
 {#    // Extend DataTables with custom date filtering#}
@@ -105,4 +104,40 @@
 {#</script>#}
 {#</body>#}
 {#</html>#}
+    {% block scripts %}
+<script>
+    // Custom date range filter
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+        const min = $('#fromDate').val();
+        const max = $('#toDate').val();
+
+        // Date column index (0-based) -> 5
+        const dateStr = data[1];
+        const rowDate = new Date(dateStr);
+
+        if (
+            (!min || rowDate >= new Date(min)) &&
+            (!max || rowDate <= new Date(max))
+        ) {
+            return true;
+        }
+        return false;
+    });
+
+    $(document).ready(function () {
+        const table = $('#complaintTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+
+        // Trigger filter when date changes
+        $('#fromDate, #toDate').on('change', function () {
+            table.draw();
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}

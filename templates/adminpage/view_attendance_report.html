@@ -4,8 +4,32 @@
     <div class="container mt-5">
         <h3 class="mb-4">View Attendance Report</h3>
 
+<form method="post" action="/myapp/admin_viewattendance_report_post/">
+{% csrf_token %}
+    <label>Department</label>
+    <select name="dep">
+        {% for i in department %}
+        <option value="{{ i.id }}">{{ i.departementname }}</option>
+        {% endfor %}
+    </select>
+     <label>Course</label>
+    <select name="course">
+        {% for i in course %}
+        <option value="{{ i.id }}">{{ i.coursename }}</option>
+        {% endfor %}
+    </select>
+    <label>Semester</label>
+     <select name="sem">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+    </select>
+<input type="submit" value="search"/>
 
-
+</form>
         <!-- Complaints Table -->
         <div class="table-responsive">
             <table class="table table-bordered table-hover" id="complaintTable">
@@ -17,6 +41,7 @@
                         <th>Course</th>
                         <th>Sem</th>
                         <th>Date</th>
+                        <th>Time</th>
                         <th>Status</th>
 
 
@@ -32,7 +57,26 @@
                         <td>{{ i.STUDENT.COURSE.DEP.departementname }}</td>
                         <td>{{ i.STUDENT.COURSE.coursename }}</td>
                         <td>{{ i.STUDENT.sem }}</td>
-                        <td>{{ i.date }}</td>
+                        <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:":10" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
+                    <td>
+                        {% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:"11:19" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}
+                    </td>
                         <td>{{ i.status }}</td>
 
 
