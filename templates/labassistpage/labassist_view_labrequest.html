@@ -1,0 +1,76 @@
+{% extends 'labassistpage/labassist_index.html' %}
+{% block body %}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#  <meta charset="UTF-8">#}
+{#  <title>file logs</title>#}
+{#  <!-- Bootstrap CSS -->#}
+{#  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+{#  <!-- DataTables CSS -->#}
+{#  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">#}
+{#</head>#}
+{#<body>#}
+  <div class="container mt-5">
+    <h2 class="mb-4">View Lab Requests</h2>
+    <table id="registrationTable" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>SNO</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>status</th>
+          <th>Lab</th>
+          <th>Student</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+      <tbody class="fw-bold text-dark">
+        <!-- Sample Data Row -->
+        {% for i in data %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ i.date }}</td>
+          <td>{% if i.time %}
+                                        {% if i.time|length > 10 %}
+                                            {{ i.time|slice:":8" }}
+                                        {% else %}
+                                            {{ i.time }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
+          <td>{{ i.status }}</td>
+          <td>{{ i.LAB.labname }}</td>
+          <td>{{ i.STUDENT.studentname }}</td>
+        <td>
+{#        {% if i.status == 'pending' %}#}
+                      <a href="/myapp/labassist_accept_labreq/{{ i.id }}" class="btn btn-primary">accept</a>
+{#            {% else %}#}
+            <a href="/myapp/labassist_reject_labreq/{{ i.id }}" class="btn btn-danger">reject</a>
+
+{#        {% endif %}#}
+ </td>
+        </tr>
+        {% endfor %}
+        
+        <!-- Add more rows dynamically from backend -->
+      </tbody>
+    </table>
+  </div>
+
+ {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#registrationTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
+{% endblock %}

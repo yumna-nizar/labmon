@@ -1,20 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Staff command</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- DataTables CSS -->
-    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-</head>
-
-<body>
+{% extends 'staffpage/Staff_index.html' %}
+{% block body %}
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{##}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Staff command</title>#}
+{#    <!-- Bootstrap 5 CSS -->#}
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">#}
+{#    <!-- DataTables CSS -->#}
+{#    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">#}
+{#</head>#}
+{##}
+{#<body>#}
     <div class="container mt-5">
-        <h3 class="mb-4">Staff command invocation</h3>
-        <div class="container">
 
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0">Staff View - Command</h4>
+{#      <a href="/myapp/staff_add_command_get/{{ s.id }}" class="btn btn-primary">Add command</a>#}
+    </div>
+
+
+        <div class="container">
+<form method="post" action="/myapp/staff_command_invoc_post/">
+    {% csrf_token %}
+    <input type="hidden" value="{{ s.id }}" name="id">
             <div class="row mb-3">
                 <label for="command" class="col-sm-1">Command</label>
                 <div class="col-sm-2">
@@ -27,41 +37,56 @@
                     <button type="submit" class="btn btn-primary">execute</button>
                 </div>
             </div>
+    </form>
         </div>
 
 
         <!-- Complaints Table -->
         <div class="table-responsive">
-            <table class="table table-bordered table-hover" id="complaintTable">
+            <table class="table table-bordered table-hover" id="registrationTable">
                 <thead class="table-light">
                     <tr>
                         <th>SNo</th>
                         <th>Date</th>
                         <th>Time</th>
-                        <th>Command</th>
+                        <th>command</th>
                         <th>Status</th>
-
-
-
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="fw-bold text-dark">
                     <!-- Sample Data Rows -->
+                    {% for i in data %}
                     <tr>
-                        <td width="5%">1</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td width="5%">{{ forloop.counter }}</td>
+                        <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:":10" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
+                        <td>{% if i.date %}
+                                        {% if i.date|length > 10 %}
+                                            {{ i.date|slice:"11:19" }}
+                                        {% else %}
+                                            {{ i.date }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}</td>
+                        <td>{{ i.command }}</td>
+                        <td>{{ i.status }}</td>
                         <td width="15%">
-                            <a class="btn btn-sm btn-primary">Edit</a>
-                            <a class="btn btn-sm btn-danger">Delete</a>
+{#                            <a class="btn btn-sm btn-primary">Edit</a>#}
+                            <a href="/myapp/staff_delete_command/{{ i.id }}" class="btn btn-sm btn-danger">Delete</a>
 
 
                         </td>
                     </tr>
-
+                    {% endfor %}
                     <!-- Add more rows as needed -->
                 </tbody>
             </table>
@@ -69,38 +94,52 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-
-    <script>
-        // Extend DataTables with custom date filtering
-        $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
-            const min = document.getElementById('fromDate').value;
-            const max = document.getElementById('toDate').value;
-            const dateStr = data[1]; // Date is column index 1
-            const date = new Date(dateStr);
-
-            const minDate = min ? new Date(min) : null;
-            const maxDate = max ? new Date(max) : null;
-
-            if ((!minDate || date >= minDate) && (!maxDate || date <= maxDate)) {
-                return true;
-            }
-            return false;
+{#    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
+{#    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
+{#    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
+{##}
+{#    <script>#}
+{#        // Extend DataTables with custom date filtering#}
+{#        $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {#}
+{#            const min = document.getElementById('fromDate').value;#}
+{#            const max = document.getElementById('toDate').value;#}
+{#            const dateStr = data[1]; // Date is column index 1#}
+{#            const date = new Date(dateStr);#}
+{##}
+{#            const minDate = min ? new Date(min) : null;#}
+{#            const maxDate = max ? new Date(max) : null;#}
+{##}
+{#            if ((!minDate || date >= minDate) && (!maxDate || date <= maxDate)) {#}
+{#                return true;#}
+{#            }#}
+{#            return false;#}
+{#        });#}
+{##}
+{#        // Initialize DataTable and bind filter events#}
+{#        $(document).ready(function () {#}
+{#            const table = $('#complaintTable').DataTable({#}
+{#                pageLength: 5#}
+{#            });#}
+{##}
+{#            $('#fromDate, #toDate').on('change', function () {#}
+{#                table.draw();#}
+{#            });#}
+{#        });#}
+{#    </script>#}
+{#</body>#}
+{##}
+{#</html>#}
+      {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#registrationTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
         });
+    });
+</script>
 
-        // Initialize DataTable and bind filter events
-        $(document).ready(function () {
-            const table = $('#complaintTable').DataTable({
-                pageLength: 5
-            });
-
-            $('#fromDate, #toDate').on('change', function () {
-                table.draw();
-            });
-        });
-    </script>
-</body>
-
-</html>
+{% endblock %}
+{% endblock %}

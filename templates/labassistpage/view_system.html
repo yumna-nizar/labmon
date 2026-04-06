@@ -10,37 +10,83 @@
 {#<body>#}
 <div class="container py-4">
     <!-- Top Controls -->
+
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <select class="form-select w-auto">
-            <option selected>Choose Lab</option>
-            <option value="1">Lab 1</option>
-            <option value="2">Lab 2</option>
-        </select>
-        <button class="btn btn-primary">Show</button>
+
     </div>
 
     <!-- Resource Cards -->
-    <div class="row g-4">
-        <!-- Card 1 -->
+{#    <div class="row g-4">#}
+{#        <!-- Card 1 -->#}
+{#        {% for i in data %}#}
+{#        <div class="col-md-6">#}
+{#            <div class="card shadow-sm">#}
+{#                <div class="card-body">#}
+{#                    <p><strong>No:</strong> {{ i.systemno }}</p>#}
+{#                    <p><strong>MAC:</strong>{{ i.macaddress }}</p>#}
+{#                    <p><strong>Lab:</strong>{{ i.LAB.labno }}-{{ i.LAB.labname }}</p>#}
+{#                    <div class="d-flex justify-content-end gap-2">#}
+{#                        <a href="/myapp/labassist_editsystem_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>#}
+{#                        <a href="/myapp/labassist_deletesystem_get/{{ i.id }}" class="btn btn-sm btn-outline-danger">Delete</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        {% endfor %}#}
+  <div class="container mt-5">
+    <h2 class="mb-4">Lab assistant View System</h2>
+    <table id="registrationTable" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>SNO</th>
+          <th>System no</th>
+          <th>Mac address</th>
+          <th>lab Assistant</th>
+          <th>Action</th>
+
+
+        </tr>
+      </thead>
+      <tbody class="fw-bold text-dark">
+        <!-- Sample Data Row -->
         {% for i in data %}
-        <div class="col-md-6">
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <p><strong>No:</strong> {{ i.systemno }}</p>
-                    <p><strong>MAC:</strong>{{ i.macaddress }}</p>
-                    <p><strong>Lab:</strong>{{ i.LAB.labno }}-{{ i.LAB.labname }}</p>
-                    <div class="d-flex justify-content-end gap-2">
-                        <a href="/myapp/admin_editsystem_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">Edit</a>
-                        <a href="/myapp/admin_deletesystem_get/{{ i.id }}" class="btn btn-sm btn-outline-danger">Delete</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ i.systemno }}</td>
+          <td>{{ i.macaddress }}</td>
+          <td>{{ i.LABASSIST.labassistantname }}</td>
+          <td>
+              <a href="/myapp/labassist_editsystem_get/{{ i.id }}" class="btn btn-sm btn-outline-success">Edit</a>
+              <a href="/myapp/labassist_deletesystem_get/{{ i.id }}" class="btn btn-sm btn-outline-danger">Delete</a>
+            <a href="/myapp/labassist_view_filelogs_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">file logs</a>
+            <a href="/myapp/labassist_view_keylogs_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">key logs</a>
+            <a href="/myapp/labassist_view_processlogs_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">process logs</a>
+            <a href="/myapp/labassist_view_scrnshot_get/{{ i.id }}" class="btn btn-sm btn-outline-secondary">screenshot</a>
+            <a href="/myapp//{{ i.id }}" class="btn btn-sm btn-outline-danger">shutdown</a>
+          </td>
+
+        </tr>
         {% endfor %}
+
+        <!-- Add more rows dynamically from backend -->
+      </tbody>
+    </table>
+  </div>
 
         <!-- Repeat for more cards -->
     </div>
 </div>
-{#</body>#}
-{#</html>#}
+  {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#registrationTable').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}

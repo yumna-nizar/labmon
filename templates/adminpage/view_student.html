@@ -43,21 +43,18 @@
 
     <!-- Complaints Table -->
     <div class="table-responsive">
-        <table class="table table-bordered table-hover" id="complaintTable">
+        <table class="table table-bordered table-hover" id="dept">
             <thead class="table-light">
             <tr>
                 <th>SNo</th>
-                <th>Student name</th>
-                <th>photo</th>
+                <th>Name</th>
+                <th>Photo</th>
                 <th>dob</th>
                 <th>E-mail</th>
                 <th>Phone</th>
                 <th>Gender</th>
-                <th>Place</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Pincode</th>
-                <th>Couse</th>
+                <th>Address</th>
+                <th>Course</th>
                 <th>Semester</th>
 
 
@@ -75,16 +72,16 @@
                 <td width="8%">{{ i.email }}</td>
                 <td>{{ i.phone }}</td>
                 <td>{{ i.gender }}</td>
-                <td>{{ i.place }}</td>
-                <td>{{ i.city }}</td>
-                <td>{{ i.state }}</td>
-                <td>{{ i.pincode }}</td>
+                <td>{{ i.place }}<br>
+                {{ i.city }}<br>
+                {{ i.state }}<br>
+                {{ i.pincode }}</td>
                 <td>{{ i.COURSE.coursename }}</td>
-                <td>{{ i.COURSE.totelsem }}</td>
+                <td>{{ i.sem }}</td>
 
 
                 <td width="15%">
-                    <a  href="/myapp/admin_editstudent_get/{{ i.id }}" class="btn btn-sm btn-primary">Edit</a>
+                    <a  href="/myapp/admin_editstudent_get/{{ i.id }}" class="btn btn-sm btn-success">Edit</a>
                     <a  href="/myapp/admin_deletestudent_get/{{ i.id }}" class="btn btn-sm btn-danger">Delete</a>
 
 
@@ -97,39 +94,17 @@
     </div>
 </div>
 
-<!-- Scripts -->
-{#<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>#}
-{#<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>#}
-{#<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>#}
-{##}
-{#<script>#}
-{#    // Extend DataTables with custom date filtering#}
-{#    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {#}
-{#        const min = document.getElementById('fromDate').value;#}
-{#        const max = document.getElementById('toDate').value;#}
-{#        const dateStr = data[1]; // Date is column index 1#}
-{#        const date = new Date(dateStr);#}
-{##}
-{#        const minDate = min ? new Date(min) : null;#}
-{#        const maxDate = max ? new Date(max) : null;#}
-{##}
-{#        if ((!minDate || date >= minDate) && (!maxDate || date <= maxDate)) {#}
-{#            return true;#}
-{#        }#}
-{#        return false;#}
-{#    });#}
-{##}
-{#    // Initialize DataTable and bind filter events#}
-{#    $(document).ready(function () {#}
-{#        const table = $('#complaintTable').DataTable({#}
-{#            pageLength: 5#}
-{#        });#}
-{##}
-{#        $('#fromDate, #toDate').on('change', function () {#}
-{#            table.draw();#}
-{#        });#}
-{#    });#}
-{#</script>#}
-{#</body>#}
-{#</html>#}
+    {% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('#dept').DataTable({
+            paging: true,
+            searching: true,
+            ordering: true,
+            pageLength: 10
+        });
+    });
+</script>
+
+{% endblock %}
 {% endblock %}

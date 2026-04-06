@@ -88,6 +88,17 @@
           <input type="text" pattern="[0-9]{6}" class="form-control" id="pincode" name="pincode" required>
         </div>
       </div>
+    <div class="row mb-3">
+        <label for="dept" class="col-sm-2 ">Department</label>
+        <div class="col-sm-5">
+<select class="form-control" id="dept" name="dept" required>
+                            {% for i in data %}
+                            <option value="{{ i.id }}">{{ i.departementname }}</option>
+                            {% endfor %}
+
+                        </select>        </div>
+      </div>
+
 
 
 
